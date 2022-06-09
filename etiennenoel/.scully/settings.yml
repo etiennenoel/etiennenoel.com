@@ -1,0 +1,12 @@
+identifier: l44976d8mat1o11e
+appPort: 1864
+staticPort: 1668
+reloadPort: 2667
+hostName: localhost
+projectName: etiennenoel
+homeFolder: /Users/etiennenoel/Development/etiennenoel/etiennenoel.com/etiennenoel
+distFolder: dist/etiennenoel
+outDir: >-
+  /Users/etiennenoel/Development/etiennenoel/etiennenoel.com/etiennenoel/dist/static
+handle404: ''
+allowErrorCollect: true

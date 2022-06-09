@@ -1,12 +1,12 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "cli": {
-    "analytics": "c9ba8adb-0b02-409f-b196-5a97a9298680"
+    "analytics": "1b03b685-5e03-4e20-a87d-f192b6b2ef31"
   },
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "yes": {
+    "etiennenoel": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -23,7 +23,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/yes",
+            "outputPath": "dist/etiennenoel",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -75,10 +75,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "yes:build:production"
+              "browserTarget": "etiennenoel:build:production"
             },
             "development": {
-              "browserTarget": "yes:build:development"
+              "browserTarget": "etiennenoel:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -86,7 +86,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "yes:build"
+            "browserTarget": "etiennenoel:build"
           }
         },
         "test": {
@@ -110,5 +110,5 @@
       }
     }
   },
-  "defaultProject": "yes"
+  "defaultProject": "etiennenoel"
 }
