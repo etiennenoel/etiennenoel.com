@@ -43,4 +43,4 @@ jobs:
           path: frontend/dist/etiennenoel.com/browser
 
       - name: Deploy
-        uses: actions/deploy-pages
+        uses: actions/deploy-pages@v4
