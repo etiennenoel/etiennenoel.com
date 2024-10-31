@@ -41,3 +41,6 @@ jobs:
         uses: actions/upload-pages-artifact@v3 # or specific "vX.X.X" version tag for this action
         with:
           path: frontend/dist/etiennenoel.com/browser
+
+      - name: Deploy
+        uses: actions/deploy-pages
