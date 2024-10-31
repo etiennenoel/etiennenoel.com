@@ -27,6 +27,11 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Build the app
+        run: npm install
+        working-directory: frontend
+      
+      # Runs a single command using the runners shell
+      - name: Build the app
         run: npm run build
         working-directory: frontend
 
