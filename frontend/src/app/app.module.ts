@@ -1,4 +1,3 @@
-import {AppComponent} from './app.component';
 import {NgModule} from '@angular/core';
 import {RouterModule} from '@angular/router';
 import {BrowserModule} from '@angular/platform-browser';
@@ -11,7 +10,6 @@ import {HomeComponent} from './pages/home/home.component';
 
 @NgModule({
   declarations: [
-    AppComponent,
     HeaderComponent,
     LayoutComponent,
     RootComponent,
@@ -26,7 +24,7 @@ import {HomeComponent} from './pages/home/home.component';
     RouterModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [RootComponent]
 })
 export class AppModule {
 }
