@@ -7,6 +7,7 @@ import {LayoutComponent} from './components/layout/layout.component';
 import {RootComponent} from './components/root/root.component';
 import {AppRoutingModule} from './app.routes';
 import {HomeComponent} from './pages/home/home.component';
+import {ContactMeComponent} from './pages/contact-me/contact-me.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import {HomeComponent} from './pages/home/home.component';
 
     // Pages
     HomeComponent,
+    ContactMeComponent,
   ],
   imports: [
     AppRoutingModule,

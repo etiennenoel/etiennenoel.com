@@ -5,7 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6a7b3247-22f7-416b-8cf3-1696dd826fa2" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/pages/contact-me/contact-me.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/pages/contact-me/contact-me.component.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/pages/contact-me/contact-me.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/pages/contact-me/contact-me.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/app.routes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/app.routes.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/components/header/header.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/components/header/header.component.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -54,19 +60,20 @@
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/etiennenoel/Development/etiennenoel/etiennenoel.com",
+    "last_opened_file_path": "/Users/etiennenoel/Development/etiennenoel/etiennenoel.com/frontend/src/app/pages",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "npm.start.executor": "Run",
-    "ts.external.directory.path": "/Users/etiennenoel/Development/etiennenoel/etiennenoel.com/etiennenoel/node_modules/typescript/lib",
+    "ts.external.directory.path": "/Users/etiennenoel/Development/etiennenoel/etiennenoel.com/frontend/node_modules/typescript/lib",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/frontend/src/app/pages" />
       <recent name="$PROJECT_DIR$" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -131,7 +138,7 @@
       <updated>1654793703915</updated>
       <workItem from="1654793705173" duration="8833000" />
       <workItem from="1730410333070" duration="3517000" />
-      <workItem from="1730497191864" duration="22000" />
+      <workItem from="1730497191864" duration="2018000" />
     </task>
     <servers />
   </component>
