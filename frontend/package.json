@@ -6,7 +6,8 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "serve:ssr:etiennenoel.com": "node dist/etiennenoel.com/server/server.mjs"
   },
   "private": true,
   "dependencies": {

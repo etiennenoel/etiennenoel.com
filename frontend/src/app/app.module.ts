@@ -1,6 +1,6 @@
 import {NgModule} from '@angular/core';
 import {RouterModule} from '@angular/router';
-import {BrowserModule} from '@angular/platform-browser';
+import {BrowserModule, provideClientHydration} from '@angular/platform-browser';
 import {CommonModule} from '@angular/common';
 import {HeaderComponent} from './components/header/header.component';
 import {LayoutComponent} from './components/layout/layout.component';
@@ -23,7 +23,9 @@ import {HomeComponent} from './pages/home/home.component';
     BrowserModule,
     RouterModule,
   ],
-  providers: [],
+  providers: [
+    provideClientHydration()
+  ],
   bootstrap: [RootComponent]
 })
 export class AppModule {
