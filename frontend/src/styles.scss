@@ -1,1 +1,23 @@
-/* You can add global styles to this file, and also import other style files */
+@import "variables";
+
+p {
+  font-family: "Open Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}/* You can add global styles to this file, and also import other style files */
+
+
+h1, h2, h3, h4, h5, h6 {
+  color: $secondary;
+  font-family: "Lato", sans-serif;
+}
+
+h2 {
+  color: $primary;
+}
+
+a {
+  color: $primary;
+}

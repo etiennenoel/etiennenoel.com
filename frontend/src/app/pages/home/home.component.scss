@@ -8,14 +8,15 @@
     height: 280px;
   }
 
-  height: 340px;
+  height: 400px;
   background: url('/images/hero-slide.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top left;
 
   h1 {
-    font-family: 'Arial Black';
+    font-family: "Lato", sans-serif;
+    font-weight: bold;
     //font-size: 90pt;
     color: white;
     text-align: center;
