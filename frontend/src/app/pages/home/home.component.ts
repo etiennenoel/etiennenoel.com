@@ -30,7 +30,7 @@ export class HomeComponent implements OnInit, OnDestroy {
       location: "San Francisco, CA",
       desc: "Leading the engineering efforts to bring native AI capabilities to the web platform.",
       impact: [
-        "Launched window.ai and Built-in AI APIs, enabling privacy-preserving local inference for millions of users.",
+        "Launched Built-in AI APIs, enabling privacy-preserving local inference for millions of users.",
         "Scaling the WebNN implementation to unlock NPU/GPU hardware acceleration across all major OSs.",
         "Managing cross-functional teams (Eng, PM, Research) to define the standards for on-device GenAI."
       ]

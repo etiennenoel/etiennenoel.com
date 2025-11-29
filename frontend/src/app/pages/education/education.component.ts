@@ -19,7 +19,7 @@ export class EducationComponent {
       level: "Intermediate",
       duration: "4 Hours",
       modules: [
-        { title: "Introduction to Window.ai" },
+        { title: "Introduction to Language.create()" },
         { title: "Prompt Engineering for Nano" },
         { title: "Streaming & Token Handling" },
         { title: "Context Window Management" }

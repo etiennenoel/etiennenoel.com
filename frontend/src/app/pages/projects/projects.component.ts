@@ -13,7 +13,7 @@ export class ProjectsComponent {
     {
       title: "Chrome Built-in AI",
       role: "Engineering Lead",
-      desc: "Unlocking local LLM capabilities. I lead the team building window.ai, allowing web apps to run Gemini Nano locally without server latency or cost.",
+      desc: "Unlocking local LLM capabilities. I lead the team building the Built-In AI APIs, allowing web apps to run Gemini Nano locally without server latency or cost.",
       tags: ["C++", "TensorFlow", "Chrome"],
       stat: "1B+ Users",
       challenge: "Running LLMs in a browser was historically prohibited by hardware constraints and memory limits. Developers relied on costly cloud inference.",

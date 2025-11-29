@@ -1,8 +1,7 @@
 <div class="container-fluid">
-  <app-header>
-
-  </app-header>
+  <app-header></app-header>
 
   <router-outlet></router-outlet>
 </div>
+
 <app-floating-nav [activeTab]="currentTab" (tabChange)="onTabChange($event)"></app-floating-nav>
