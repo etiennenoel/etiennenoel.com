@@ -1,8 +1,5 @@
 import { Component } from '@angular/core';
-import { CommonModule, NgFor, NgIf } from '@angular/common';
-import { GlitchTextComponent } from '../../components/ui/glitch-text/glitch-text.component';
-import { GlassCardComponent } from '../../components/ui/glass-card/glass-card.component';
-import { ModalComponent, Project } from '../../components/ui/modal/modal.component'; // Import Project interface
+import { Project } from '../../components/ui/modal/modal.component';
 
 @Component({
   selector: 'app-projects',

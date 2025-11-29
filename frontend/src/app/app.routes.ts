@@ -16,34 +16,34 @@ export const routes: Routes = [
     children: [
       {
         path: "",
-        component: HomeComponent,
-      },
-      {
-        path: "projects",
-        component: ProjectsComponent,
-      },
-      {
-        path: "education",
-        component: EducationComponent,
-      },
-      {
-        path: "articles",
-        component: ArticlesComponent,
-      },
-      {
-        path: "contact-me",
-        component: ContactMeComponent,
-      },
-      {
-        path: "about-me",
-        component: AboutMeComponent,
-      },
-      {
-        path: "",
         component: LayoutComponent,
         children: [
+          {
+            path: "",
+            component: HomeComponent,
+          },
+          {
+            path: "projects",
+            component: ProjectsComponent,
+          },
+          {
+            path: "education",
+            component: EducationComponent,
+          },
+          {
+            path: "articles",
+            component: ArticlesComponent,
+          },
+          {
+            path: "contact-me",
+            component: ContactMeComponent,
+          },
+          {
+            path: "about-me",
+            component: AboutMeComponent,
+          }
         ]
-      }
+      },
     ]
   }
 ];

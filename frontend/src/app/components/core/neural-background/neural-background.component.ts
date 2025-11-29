@@ -18,7 +18,7 @@ export class NeuralBackgroundComponent implements AfterViewInit, OnDestroy {
   private mouseY: number = 0;
 
   // Configuration
-  private readonly particleCount = 40;
+  private readonly particleCount = 60; // Updated
   private readonly connectionDistance = 150;
   private readonly mouseDistance = 200;
 
@@ -84,7 +84,7 @@ export class NeuralBackgroundComponent implements AfterViewInit, OnDestroy {
       particle.draw(this.ctx);
     });
 
-    this.ctx.strokeStyle = 'rgba(100, 200, 255, 0.05)';
+    this.ctx.strokeStyle = 'rgba(100, 200, 255, 0.08)'; // Updated
     this.ctx.lineWidth = 1;
 
     for (let i = 0; i < this.particles.length; i++) {
@@ -116,8 +116,8 @@ class Particle {
   constructor(canvasWidth: number, canvasHeight: number) {
     this.x = Math.random() * canvasWidth;
     this.y = Math.random() * canvasHeight;
-    this.vx = (Math.random() - 0.5) * 0.3;
-    this.vy = (Math.random() - 0.5) * 0.3;
+    this.vx = (Math.random() - 0.5) * 0.5; // Updated
+    this.vy = (Math.random() - 0.5) * 0.5; // Updated
     this.size = Math.random() * 2 + 1;
   }
 

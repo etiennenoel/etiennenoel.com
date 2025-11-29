@@ -1,5 +1,4 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { NgClass } from '@angular/common'; // Import NgClass for dynamic class binding
 
 @Component({
   selector: 'app-nav-item',
