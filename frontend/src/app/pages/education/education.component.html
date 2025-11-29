@@ -3,8 +3,8 @@
 
   <div class="flex items-end justify-between mb-12">
     <div>
-      <h2 class="text-3xl font-bold text-white mb-2"><app-glitch-text text="Education Center"></app-glitch-text></h2>
-      <p class="text-neutral-400">Master the next generation of web capabilities.</p>
+      <h2 class="text-3xl font-bold mb-2" [style.color]="'var(--text-primary)'"><app-glitch-text text="Education Center"></app-glitch-text></h2>
+      <p [style.color]="'var(--text-muted)'">Master the next generation of web capabilities.</p>
     </div>
     <i class="bi bi-mortarboard text-blue-500 opacity-50 text-3xl"></i>
   </div>
@@ -15,19 +15,19 @@
          <div class="p-3 bg-purple-500/10 rounded-lg text-purple-400">
             <i class="bi bi-play-circle text-2xl"></i>
          </div>
-         <span class="px-2 py-1 bg-white/5 text-xs font-mono text-neutral-400 rounded border border-white/5">
+         <span class="px-2 py-1 text-xs font-mono rounded" [style.background-color]="'var(--bg-card)'" [style.border-color]="'var(--border-glass)'" [style.color]="'var(--text-muted)'">
            {{course.level}}
          </span>
       </div>
 
-      <h3 class="text-xl font-bold text-white mb-2 group-hover:text-blue-400 transition-colors">
+      <h3 class="text-xl font-bold mb-2 group-hover:text-blue-400 transition-colors" [style.color]="'var(--text-primary)'">
         {{course.title}}
       </h3>
-      <p class="text-neutral-400 text-sm mb-6 flex-grow leading-relaxed">
+      <p class="text-sm mb-6 flex-grow leading-relaxed" [style.color]="'var(--text-muted)'">
         {{course.desc}}
       </p>
 
-      <div class="pt-4 border-t border-white/5 flex items-center justify-between text-xs text-neutral-500 font-mono">
+      <div class="pt-4 border-t flex items-center justify-between text-xs font-mono" [style.border-color]="'var(--border-glass)'" [style.color]="'var(--text-muted)'">
          <div class="flex items-center gap-2">
            <i class="bi bi-file-earmark-text"></i> {{course.modules.length}} MODULES
          </div>

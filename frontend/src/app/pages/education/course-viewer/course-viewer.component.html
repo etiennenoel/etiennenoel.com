@@ -1,13 +1,13 @@
-<div *ngIf="course" class="fixed inset-0 z-[60] bg-[#050508] animate-fade-in flex flex-col md:flex-row">
+<div *ngIf="course" class="fixed inset-0 z-[60] animate-fade-in flex flex-col md:flex-row" [style.background-color]="'var(--bg-main)'">
   <!-- Sidebar Navigation -->
-  <div class="w-full md:w-80 border-r border-white/10 bg-[#0A0A0E] flex flex-col h-full">
-    <div class="p-6 border-b border-white/10">
-      <button (click)="onClose()" class="flex items-center gap-2 text-neutral-400 hover:text-white text-sm mb-4 transition-colors">
+  <div class="w-full md:w-80 flex flex-col h-full" [style.border-right-color]="'var(--border-glass)'" [style.background-color]="'var(--bg-card)'">
+    <div class="p-6" [style.border-bottom-color]="'var(--border-glass)'">
+      <button (click)="onClose()" class="flex items-center gap-2 text-sm mb-4 transition-colors" [style.color]="'var(--text-muted)'" onMouseOver="this.style.color='var(--text-primary)'" onMouseOut="this.style.color='var(--text-muted)'">
         <i class="bi bi-chevron-left text-base"></i> Back to Courses
       </button>
-      <h2 class="text-lg font-bold text-white leading-tight">{{course.title}}</h2>
+      <h2 class="text-lg font-bold leading-tight" [style.color]="'var(--text-primary)'">{{course.title}}</h2>
       <div class="mt-2 text-xs font-mono text-blue-400">{{currentModule + 1}} / {{course.modules.length}} COMPLETED</div>
-      <div class="w-full h-1 bg-white/10 rounded-full mt-2 overflow-hidden">
+      <div class="w-full h-1 rounded-full mt-2 overflow-hidden" [style.background-color]="'var(--border-glass)'">
          <div class="h-full bg-blue-500 transition-all duration-300" [style.width.%]="((currentModule+1)/course.modules.length)*100"></div>
       </div>
     </div>
@@ -30,8 +30,8 @@
           <div class="w-1.5 h-1.5 bg-current rounded-full"></div>
         </div>
         <div>
-          <span class="text-xs text-neutral-500 font-mono block mb-1">MODULE 0{{idx + 1}}</span>
-          <span [ngClass]="{'text-sm font-medium': true, 'text-white': idx === currentModule, 'text-neutral-400': idx !== currentModule}">
+          <span class="text-xs font-mono block mb-1" [style.color]="'var(--text-muted)'">MODULE 0{{idx + 1}}</span>
+          <span [ngClass]="{'text-sm font-medium': true}" [style.color]="idx === currentModule ? 'var(--text-primary)' : 'var(--text-muted)'">
             {{mod.title}}
           </span>
         </div>
@@ -42,24 +42,24 @@
   <!-- Main Content Area -->
   <div class="flex-grow overflow-y-auto h-full relative">
     <div class="max-w-3xl mx-auto px-8 py-12">
-        <header class="mb-8 pb-8 border-b border-white/10">
+        <header class="mb-8 pb-8" [style.border-bottom-color]="'var(--border-glass)'">
             <span class="text-blue-400 font-mono text-sm">CHAPTER 0{{currentModule + 1}}</span>
-            <h1 class="text-3xl md:text-4xl font-bold text-white mt-2">{{activeLesson?.title}}</h1>
+            <h1 class="text-3xl md:text-4xl font-bold mt-2" [style.color]="'var(--text-primary)'">{{activeLesson?.title}}</h1>
         </header>
 
-        <div class="prose prose-invert prose-lg max-w-none text-neutral-300">
+        <div class="prose prose-invert prose-lg max-w-none" [style.color]="'var(--text-secondary)'">
             <p>
                 Welcome to this module. In this section, we will explore how to interface directly with the browser's neural processing capabilities.
             </p>
 
-            <h3 class="text-white font-bold mt-8">The Concept</h3>
+            <h3 class="font-bold mt-8" [style.color]="'var(--text-primary)'">The Concept</h3>
             <p>
                 Traditional web AI relied on server-side inference. Built-in AI flips this model, moving the model execution to the user's device.
             </p>
 
             <app-neo-graph type="flow"></app-neo-graph>
 
-            <h3 class="text-white font-bold mt-8">Implementation</h3>
+            <h3 class="font-bold mt-8" [style.color]="'var(--text-primary)'">Implementation</h3>
             <p>
                 Here is how you initialize a session with the Prompt API. Note the use of `LanguageModel.create()`.
             </p>
@@ -85,7 +85,7 @@
 <!--}\`}-->
             </app-neo-code>
 
-            <h3 class="text-white font-bold mt-8">System Architecture</h3>
+            <h3 class="font-bold mt-8" [style.color]="'var(--text-primary)'">System Architecture</h3>
             <p>The following diagram illustrates how the prompt travels through the IPC layer to the GPU process.</p>
 
             <app-neo-image caption="Chrome Process Isolation Model"></app-neo-image>
@@ -93,18 +93,20 @@
         </div>
 
         <!-- Footer Navigation -->
-        <div class="mt-16 pt-8 border-t border-white/10 flex justify-between">
+        <div class="mt-16 pt-8 flex justify-between" [style.border-top-color]="'var(--border-glass)'">
             <button
               [disabled]="currentModule === 0"
               (click)="setCurrentModule(currentModule - 1)"
-              class="px-6 py-3 rounded-lg border border-white/10 text-white disabled:opacity-50 disabled:cursor-not-allowed hover:bg-white/5 flex items-center gap-2"
+              class="px-6 py-3 rounded-lg border disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
+              [style.border-color]="'var(--border-glass)'" [style.color]="'var(--text-primary)'" onMouseOver="this.style.backgroundColor='var(--bg-glass-hover)'" onMouseOut="this.style.backgroundColor='transparent'"
             >
                 <i class="bi bi-chevron-left text-base"></i> Previous Lesson
             </button>
             <button
               [disabled]="currentModule === course.modules.length - 1"
               (click)="setCurrentModule(currentModule + 1)"
-              class="px-6 py-3 rounded-lg bg-blue-600 text-white font-medium hover:bg-blue-500 transition-colors flex items-center gap-2"
+              class="px-6 py-3 rounded-lg bg-blue-600 font-medium hover:bg-blue-500 transition-colors flex items-center gap-2"
+              [style.color]="'white'"
             >
                 Next Lesson <i class="bi bi-chevron-right text-base"></i>
             </button>

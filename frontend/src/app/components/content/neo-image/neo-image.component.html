@@ -1,9 +1,9 @@
 <div class="my-8 group">
-  <div class="relative h-64 w-full bg-[#111] rounded-xl overflow-hidden border border-white/10 flex items-center justify-center">
+  <div class="relative h-64 w-full rounded-xl overflow-hidden border flex items-center justify-center" [style.background-color]="'var(--bg-code)'" [style.border-color]="'var(--border-glass)'">
     <div class="absolute inset-0 bg-[linear-gradient(45deg,transparent_25%,rgba(68,68,68,.2)_50%,transparent_75%,transparent_100%)] bg-[length:20px_20px]"></div>
-    <i class="bi bi-image text-neutral-700 text-5xl mb-2"></i>
-    <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black to-transparent">
-      <span class="text-xs font-mono text-white/70">{{ caption || "Visualization Placeholder" }}</span>
+    <i class="bi bi-image text-5xl mb-2" [style.color]="'var(--text-muted)'"></i>
+    <div class="absolute bottom-0 left-0 right-0 p-4" [style.background-image]="'linear-gradient(to top, var(--bg-main), transparent)'">
+      <span class="text-xs font-mono" [style.color]="'var(--text-muted)'">{{ caption || "Visualization Placeholder" }}</span>
     </div>
   </div>
 </div>

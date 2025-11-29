@@ -84,7 +84,7 @@ export class NeuralBackgroundComponent implements AfterViewInit, OnDestroy {
       particle.draw(this.ctx);
     });
 
-    this.ctx.strokeStyle = 'rgba(100, 200, 255, 0.08)'; // Updated
+    this.ctx.strokeStyle = getComputedStyle(this.canvasRef.nativeElement).getPropertyValue('--neural-line-color');
     this.ctx.lineWidth = 1;
 
     for (let i = 0; i < this.particles.length; i++) {
@@ -143,7 +143,7 @@ class Particle {
   }
 
   draw(ctx: CanvasRenderingContext2D) {
-    ctx.fillStyle = 'rgba(100, 200, 255, 0.5)';
+    ctx.fillStyle = getComputedStyle(ctx.canvas).getPropertyValue('--neural-particle-color');
     ctx.beginPath();
     ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
     ctx.fill();

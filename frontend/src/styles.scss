@@ -1,4 +1,72 @@
-@import "variables";
+:root {
+  --bg-main-light: #ffffff;
+  --bg-card-light: rgba(245, 245, 245, 0.85);
+  --bg-glass-hover-light: rgba(0, 0, 0, 0.05);
+  --bg-overlay-light: rgba(255, 255, 255, 0.95);
+  --bg-dock-light: rgba(255, 255, 255, 0.8);
+  --bg-code-light: #f5f5f5;
+  --border-glass-light: rgba(0, 0, 0, 0.1);
+  --text-primary-light: #171717;
+  --text-secondary-light: #525252;
+  --text-muted-light: #737373;
+  --box-shadow-dock-light: 0 0 20px rgba(0, 0, 0, 0.2);
+  --neural-particle-color-light: rgba(59, 130, 246, 0.5); /* Blue-500 with opacity */
+  --neural-line-color-light: rgba(59, 130, 246, 0.08); /* Blue-500 with opacity */
+
+  --bg-main-dark: #050508;
+  --bg-card-dark: rgba(255, 255, 255, 0.05);
+  --bg-glass-hover-dark: rgba(255, 255, 255, 0.1);
+  --bg-overlay-dark: rgba(0, 0, 0, 0.9);
+  --bg-dock-dark: rgba(0, 0, 0, 0.6);
+  --bg-code-dark: #0A0A0E;
+  --border-glass-dark: rgba(255, 255, 255, 0.1);
+  --text-primary-dark: #ffffff;
+  --text-secondary-dark: #d4d4d4;
+  --text-muted-dark: #737373;
+  --box-shadow-dock-dark: 0 0 20px rgba(0, 0, 0, 0.8);
+  --neural-particle-color-dark: rgba(100, 200, 255, 0.5); /* Light blue with opacity */
+  --neural-line-color-dark: rgba(100, 200, 255, 0.05); /* Light blue with opacity */
+}
+
+body {
+  transition: background-color 0.3s, color 0.3s;
+}
+
+body.light-theme {
+  --bg-main: var(--bg-main-light);
+  --bg-card: var(--bg-card-light);
+  --bg-glass-hover: var(--bg-glass-hover-light);
+  --bg-overlay: var(--bg-overlay-light);
+  --bg-dock: var(--bg-dock-light);
+  --bg-code: var(--bg-code-light);
+  --border-glass: var(--border-glass-light);
+  --text-primary: var(--text-primary-light);
+  --text-secondary: var(--text-secondary-light);
+  --text-muted: var(--text-muted-light);
+  --box-shadow-dock: var(--box-shadow-dock-light);
+  --neural-particle-color: var(--neural-particle-color-light);
+  --neural-line-color: var(--neural-line-color-light);
+  background-color: var(--bg-main);
+  color: var(--text-primary);
+}
+
+body.dark-theme {
+  --bg-main: var(--bg-main-dark);
+  --bg-card: var(--bg-card-dark);
+  --bg-glass-hover: var(--bg-glass-hover-dark);
+  --bg-overlay: var(--bg-overlay-dark);
+  --bg-dock: var(--bg-dock-dark);
+  --bg-code: var(--bg-code-dark);
+  --border-glass: var(--border-glass-dark);
+  --text-primary: var(--text-primary-dark);
+  --text-secondary: var(--text-secondary-dark);
+  --text-muted: var(--text-muted-dark);
+  --box-shadow-dock: var(--box-shadow-dock-dark);
+  --neural-particle-color: var(--neural-particle-color-dark);
+  --neural-line-color: var(--neural-line-color-dark);
+  background-color: var(--bg-main);
+  color: var(--text-primary);
+}
 
 p {
   font-family: "Open Sans", sans-serif;
@@ -6,23 +74,17 @@ p {
   font-style: normal;
   font-variation-settings:
     "wdth" 100;
-}/* You can add global styles to this file, and also import other style files */
-
+}
 
 h1, h2, h3, h4, h5, h6 {
-  color: $secondary;
+  color: var(--text-primary);
   font-family: "Lato", sans-serif;
 }
 
-h2 {
-  color: $primary;
-}
-
 a {
-  color: $primary;
+  color: var(--text-primary);
 }
 
-/* Global styles from React code */
 @keyframes fade-in-up {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
@@ -38,7 +100,6 @@ a {
   100% { transform: translateX(200%); }
 }
 ::-webkit-scrollbar { width: 8px; }
-::-webkit-scrollbar-track { background: #050508; }
-::-webkit-scrollbar-thumb { background: #262626; border-radius: 4px; }
-::-webkit-scrollbar-thumb:hover { background: #404040; }
-
+::-webkit-scrollbar-track { background: var(--bg-main); }
+::-webkit-scrollbar-thumb { background: var(--border-glass); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--text-muted); }

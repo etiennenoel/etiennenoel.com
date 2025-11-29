@@ -2,27 +2,31 @@
   <app-article-page *ngIf="readingArticle" [article]="mockArticle" (close)="setReadingArticle(false)"></app-article-page>
 
   <div class="flex justify-between items-end mb-8">
-    <h2 class="text-3xl font-bold text-white">Articles</h2>
+    <h2 class="text-3xl font-bold" [style.color]="'var(--text-primary)'">Articles</h2>
     <span class="text-xs font-mono text-yellow-400">./notes --list</span>
   </div>
 
   <div class="grid gap-4">
     <div
       (click)="setReadingArticle(true)"
-      class="group cursor-pointer p-6 rounded-xl border border-white/5 bg-white/5 hover:border-blue-500/30 hover:bg-white/10 transition-all"
+      class="group cursor-pointer p-6 rounded-xl border transition-all"
+      [style.border-color]="'var(--border-glass)'" [style.background-color]="'var(--bg-card)'"
+      onMouseOver="this.style.borderColor='var(--border-glass-hover)'; this.style.backgroundColor='var(--bg-glass-hover)'"
+      onMouseOut="this.style.borderColor='var(--border-glass)'; this.style.backgroundColor='var(--bg-card)'"
     >
       <div class="flex justify-between items-start">
         <div>
-          <h3 class="text-xl font-bold text-white group-hover:text-blue-400 transition-colors">The Origin Private File System</h3>
-          <p class="text-sm text-neutral-400 mt-2 max-w-2xl">
+          <h3 class="text-xl font-bold group-hover:text-blue-400 transition-colors" [style.color]="'var(--text-primary)'">The Origin Private File System</h3>
+          <p class="text-sm mt-2 max-w-2xl" [style.color]="'var(--text-muted)'">
             A deep dive into high-performance file storage for the web, enabling applications like video editors and IDEs to run smoothly in the browser.
           </p>
         </div>
-        <div class="p-2 bg-white/5 rounded-full group-hover:bg-blue-500/20 transition-colors">
-          <i class="bi bi-chevron-right text-neutral-500 group-hover:text-blue-400"></i>
+        <div class="p-2 rounded-full transition-colors" [style.background-color]="'var(--bg-card)'"
+             onMouseOver="this.style.backgroundColor='var(--bg-glass-hover)'" onMouseOut="this.style.backgroundColor='var(--bg-card)'">
+          <i class="bi bi-chevron-right" [style.color]="'var(--text-muted)'"></i>
         </div>
       </div>
-      <div class="flex items-center gap-4 mt-6 text-xs font-mono text-neutral-500">
+      <div class="flex items-center gap-4 mt-6 text-xs font-mono" [style.color]="'var(--text-muted)'">
         <span class="px-2 py-0.5 rounded bg-blue-500/10 text-blue-400">WEB.DEV</span>
         <span>PERFORMANCE</span>
       </div>

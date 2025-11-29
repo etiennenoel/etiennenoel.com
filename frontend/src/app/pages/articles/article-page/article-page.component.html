@@ -1,29 +1,29 @@
-<div class="fixed inset-0 z-[55] bg-[#050508] overflow-y-auto animate-fade-in">
+<div class="fixed inset-0 z-[55] overflow-y-auto animate-fade-in" [style.background-color]="'var(--bg-main)'">
   <div class="max-w-3xl mx-auto px-6 py-20">
-    <button (click)="onClose()" class="mb-8 flex items-center gap-2 text-neutral-400 hover:text-white transition-colors">
+    <button (click)="onClose()" class="mb-8 flex items-center gap-2 transition-colors" [style.color]="'var(--text-muted)'" onMouseOver="this.style.color='var(--text-primary)'" onMouseOut="this.style.color='var(--text-muted)'">
       <i class="bi bi-chevron-left text-xl"></i> Back to Articles
     </button>
 
     <div class="mb-12">
       <span class="text-blue-400 font-mono text-sm px-2 py-1 bg-blue-500/10 rounded mb-4 inline-block">WEB.DEV</span>
-      <h1 class="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">{{ article?.title }}</h1>
-      <div class="flex gap-6 text-sm text-neutral-500 font-mono border-b border-white/10 pb-8">
+      <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight" [style.color]="'var(--text-primary)'">{{ article?.title }}</h1>
+      <div class="flex gap-6 text-sm font-mono border-b pb-8" [style.color]="'var(--text-muted)'" [style.border-color]="'var(--border-glass)'">
         <span class="flex items-center gap-2"><i class="bi bi-briefcase"></i> {{ article?.author }}</span>
         <span class="flex items-center gap-2"><i class="bi bi-layout-text-sidebar"></i> {{ article?.category }}</span>
         <span>{{ article?.readTime }} MIN READ</span>
       </div>
     </div>
 
-    <div class="prose prose-invert prose-lg max-w-none text-neutral-300">
-      <p class="text-xl text-neutral-300 leading-relaxed">
+    <div class="prose prose-invert prose-lg max-w-none" [style.color]="'var(--text-secondary)'">
+      <p class="text-xl leading-relaxed" [style.color]="'var(--text-secondary)'">
         The web has evolved from a simple document viewer into a powerful application platform. However, one barrier remained for high-performance creative apps:
-        <strong class="text-white"> fast, synchronous access to local files.</strong>
+        <strong [style.color]="'var(--text-primary)'"> fast, synchronous access to local files.</strong>
       </p>
 
       <app-neo-image caption="File System Access API Architecture"></app-neo-image>
 
-      <h3 class="text-white font-bold">Accessing the Root</h3>
-      <p class="text-neutral-400">
+      <h3 [style.color]="'var(--text-primary)'" class="font-bold">Accessing the Root</h3>
+      <p [style.color]="'var(--text-muted)'">
         To access the OPFS, you use the <code>navigator.storage</code> API. Unlike the user-visible file system, this storage area is optimized for random access and write performance.
       </p>
 
@@ -39,8 +39,8 @@
 <!--accessHandle.close();\`}-->
       </app-neo-code>
 
-      <h3 class="text-white font-bold">Conclusion</h3>
-      <p class="text-neutral-400">
+      <h3 [style.color]="'var(--text-primary)'" class="font-bold">Conclusion</h3>
+      <p [style.color]="'var(--text-muted)'">
         This API represents a paradigm shift. We are no longer just "uploading" files to the web; we are manipulating them directly in the browser's secure sandbox with native-like speed.
       </p>
     </div>

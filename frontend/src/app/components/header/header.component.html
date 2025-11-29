@@ -1,15 +1,16 @@
 <div class="py-8 flex justify-between items-center relative z-20">
   <a routerLink="/"
-     class="font-bold text-xl tracking-tight text-white flex items-center gap-2 cursor-pointer hover:opacity-80 transition-opacity">
+     class="font-bold text-xl tracking-tight flex items-center gap-2 cursor-pointer hover:opacity-80 transition-opacity" [style.color]="'var(--text-primary)'">
     <div class="w-2 h-2 bg-blue-500 rounded-full"></div>
     Etienne Noël
   </a>
-  <div class="flex gap-4">
+  <div class="flex gap-4 items-center">
     <a href="https://github.com/etiennenoel" target="_blank" rel="noreferrer"
-       class="text-neutral-400 hover:text-white transition-colors"><i class="bi bi-github text-xl"></i></a>
+       class="transition-colors" [style.color]="'var(--text-muted)'" onMouseOver="this.style.color='var(--text-primary)'" onMouseOut="this.style.color='var(--text-muted)'"><i class="bi bi-github text-xl"></i></a>
     <a href="https://twitter.com/etiennenoel" target="_blank" rel="noreferrer"
-       class="text-neutral-400 hover:text-white transition-colors"><i class="bi bi-twitter-x text-xl"></i></a>
+       class="transition-colors" [style.color]="'var(--text-muted)'" onMouseOver="this.style.color='var(--text-primary)'" onMouseOut="this.style.color='var(--text-muted)'"><i class="bi bi-twitter-x text-xl"></i></a>
     <a href="https://linkedin.com/in/etiennenoel" target="_blank" rel="noreferrer"
-       class="text-neutral-400 hover:text-white transition-colors"><i class="bi bi-linkedin text-xl"></i></a>
+       class="transition-colors" [style.color]="'var(--text-muted)'" onMouseOver="this.style.color='var(--text-primary)'" onMouseOut="this.style.color='var(--text-muted)'"><i class="bi bi-linkedin text-xl"></i></a>
+    <app-theme-toggle></app-theme-toggle>
   </div>
 </div>

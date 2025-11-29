@@ -2,17 +2,17 @@
   <app-modal [project]="selectedProject" [isOpen]="!!selectedProject" (close)="closeProjectDetails()"></app-modal>
 
   <div class="flex items-end justify-between mb-12">
-    <h2 class="text-3xl font-bold text-white"><app-glitch-text text="Selected Projects"></app-glitch-text></h2>
+    <h2 class="text-3xl font-bold" [style.color]="'var(--text-primary)'"><app-glitch-text text="Selected Projects"></app-glitch-text></h2>
   </div>
   <div class="grid lg:grid-cols-2 gap-6">
     <app-glass-card *ngFor="let p of projects; let i = index" class="flex flex-col h-full" (cardClick)="openProjectDetails(p)">
       <div class="flex justify-between items-start mb-6">
         <div class="p-3 bg-blue-500/10 rounded-lg text-blue-400"><i class="bi bi-cpu"></i></div>
-        <i class="bi bi-box-arrow-up-right text-neutral-500 hover:text-white transition-colors"></i>
+        <i class="bi bi-box-arrow-up-right transition-colors" [style.color]="'var(--text-muted)'" onMouseOver="this.style.color='var(--text-primary)'" onMouseOut="this.style.color='var(--text-muted)'"></i>
       </div>
-      <h3 class="text-xl font-bold text-white mb-1">{{p.title}}</h3>
+      <h3 class="text-xl font-bold mb-1" [style.color]="'var(--text-primary)'">{{p.title}}</h3>
       <span class="text-xs font-mono text-blue-400 mb-4 block">{{p.role}}</span>
-      <p class="text-neutral-400 text-sm leading-relaxed mb-6 flex-grow">{{p.desc}}</p>
+      <p class="text-sm leading-relaxed mb-6 flex-grow" [style.color]="'var(--text-muted)'">{{p.desc}}</p>
     </app-glass-card>
   </div>
 </div>

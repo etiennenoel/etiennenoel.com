@@ -23,6 +23,7 @@ import {ArticlePageComponent} from './pages/articles/article-page/article-page.c
 import {ModalComponent} from './components/ui/modal/modal.component';
 import {ArticlesComponent} from './pages/articles/articles.component';
 import {ProjectsComponent} from './pages/projects/projects.component';
+import { ThemeToggleComponent } from './components/ui/theme-toggle/theme-toggle.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import {ProjectsComponent} from './pages/projects/projects.component';
     ModalComponent,
     ArticlesComponent,
     ProjectsComponent,
+    ThemeToggleComponent,
 
 
     // Pages

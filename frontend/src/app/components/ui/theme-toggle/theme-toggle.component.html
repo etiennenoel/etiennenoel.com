@@ -1,0 +1,7 @@
+<button (click)="themeService.toggleTheme()" class="theme-toggle-button">
+  @if (themeService.isDarkMode()) {
+    <span class="icon">🌙</span>
+  } @else {
+    <span class="icon">☀️</span>
+  }
+</button>
