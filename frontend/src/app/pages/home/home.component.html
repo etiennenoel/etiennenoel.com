@@ -1,138 +1,88 @@
-<app-header></app-header>
+<section class="min-h-[90vh] flex flex-col justify-center relative z-10 animate-fade-in">
 
-<!--<div class="hero container-fluid d-flex justify-content-center flex-column">-->
-<!--  <h1 class="display-5 display-md-3">Empowering Teams,<br>Delivering Excellence</h1>-->
-<!--</div>-->
+  <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-blue-500/30 bg-blue-500/10 text-blue-400 text-xs font-mono mb-6 w-fit animate-fade-in-up">
+    <span class="relative flex h-2 w-2">
+      <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+      <span class="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+    </span>
+    System Online: Web AI Platform
+  </div>
 
+  <h1 class="text-6xl md:text-8xl font-bold tracking-tighter text-white mb-6 leading-[1.1]">
+    {{ typedText }}<span class="animate-pulse text-blue-500">_</span>
+  </h1>
 
+  <p class="text-xl text-neutral-400 max-w-2xl leading-relaxed mb-10">
+    I'm <span class="text-white font-semibold">Etienne Noël</span>, AI Engineering Manager at <span class="text-blue-400">Google Chrome</span>.
+    I engineer the infrastructure that lets the browser think for itself.
+  </p>
 
-<div class="container mt-4">
+  <div class="flex flex-wrap gap-4">
+    <button
+      (click)="onScrollToExperience()"
+      class="group relative px-8 py-4 bg-white text-black font-bold rounded-lg overflow-hidden transition-all hover:scale-105"
+    >
+      <div class="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+      <span class="relative flex items-center gap-2">
+        View Experience <i class="bi bi-arrow-right"></i>
+      </span>
+    </button>
+    <button
+      (click)="onNavigateToProjects()"
+      class="px-8 py-4 rounded-lg border border-white/20 text-white font-medium hover:bg-white/10 transition-all flex items-center gap-2"
+    >
+      <i class="bi bi-terminal"></i> Projects
+    </button>
+  </div>
 
-  <div class="row mt-4 d-flex align-items-center">
-    <div class="col-12 col-re col-md-4 d-flex justify-content-center">
-      <img src="/images/profile.png" class="img-fluid" style="width: 300px;">
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-20">
+    <div *ngFor="let item of heroItems; let i = index" class="p-4 rounded-xl border border-white/5 bg-white/5 backdrop-blur-sm hover:border-blue-500/20 transition-colors group">
+      <div class="text-blue-400 mb-2 group-hover:scale-110 transition-transform"><i [class]="item.iconClass"></i></div>
+      <div class="font-semibold text-white text-sm">{{ item.label }}</div>
+      <div class="text-neutral-500 text-xs">{{ item.sub }}</div>
     </div>
-    <div class="col-12 col-md-8">
-      <h2 class="display-4 text-dark" style="font-weight: bold;">Etienne Noël</h2>
+  </div>
+</section>
 
-      <h3 style="font-weight: 300;">Web AI Platform Lead - Google Chrome</h3>
+<div id="experience" class="space-y-12 animate-fade-in pt-24 pb-20 border-t border-white/5">
+  <div class="flex items-end justify-between border-b border-white/10 pb-6">
+    <div>
+      <h2 class="text-3xl font-bold text-white mb-2"><app-glitch-text text="Work Experience"></app-glitch-text></h2>
+      <p class="text-neutral-400">Career timeline and key contributions.</p>
+    </div>
+    <i class="bi bi-briefcase text-blue-500 opacity-50 text-3xl"></i>
+  </div>
 
-      <p>I'm an AI Engineering manager in San Francisco, leading Google Chrome's Web AI Platform:</p>
-      <div>
-        <ul>
-          <li>
-            <a href="https://developer.chrome.com/docs/ai/built-in">Built-In
-              AI APIs</a>
-          </li>
-          <li>WebNN</li>
-          <li>Infrastructure & Model quality for On-Device Gemini Nano</li>
-        </ul>
+  <div class="relative border-l-2 border-white/5 ml-3 md:ml-6 space-y-16">
+    <div *ngFor="let job of jobs; let idx = index" class="relative pl-8 md:pl-12 group">
+      <div class="absolute -left-[7px] top-2 w-[12px] h-[12px] rounded-full bg-[#050508] border-2 border-blue-500 shadow-[0_0_10px_rgba(59,130,246,0.5)]"></div>
 
-        <div class="d-flex mt-4 gap-2" style="height: 45px;">
-          <a routerLink="contact-me" class="btn btn-dark d-block flex-grow-1" style="line-height: 32px;">Want to chat?</a>
-<!--          <button class="btn btn-outline-primary d-block">About me</button>-->
+      <div class="flex flex-col md:flex-row md:items-start justify-between mb-4 gap-2">
+        <div>
+          <h3 class="text-2xl font-bold text-white group-hover:text-blue-400 transition-colors">{{ job.role }}</h3>
+          <div class="text-lg text-neutral-300 font-medium">{{ job.company }}</div>
+        </div>
+        <div class="text-sm font-mono text-neutral-500 text-right bg-white/5 px-3 py-1 rounded border border-white/5">
+          <div>{{ job.period }}</div>
+          <div>{{ job.location }}</div>
         </div>
       </div>
-<!--      <p>Just before, I was the Software Engineering Manager for Storage in Google Chrome (File, FileSystemHandle,-->
-<!--        IndexedDB, Cache Storage, WebSQL, etc.).</p>-->
 
-<!--      <p>Prior, I worked as a Software Engineering Manager for <a href="https://www.appdirect.com/">AppDirect</a> where-->
-<!--        I led the Invoicing, Payments and Customer Balance teams.</p>-->
+      <p class="text-neutral-400 mb-6 max-w-3xl leading-relaxed text-lg">
+        {{ job.desc }}
+      </p>
 
-<!--      <p>From 2017-2021, I was Chief Technology Officer of <a href="https://boostmi.com" rel="noreferrer">Boostmi-->
-<!--        Technologies Inc.</a> where I led an amazing team of engineers into building a robust Roadside Assistance Cloud-->
-<!--        Platform, Mobile and Web Applications and AI infrastructure.</p>-->
-
-<!--      <p>Early in my career, I led a team at <a href="https://cyme.com">CYME Eaton</a> where we built the CYME Server-->
-<!--        and accompanying Web Applications.</p>-->
+      <app-glass-card [className]="'!bg-blue-500/5 !border-blue-500/10'" [hover]="false">
+        <div class="flex items-center gap-2 mb-4 text-blue-400 text-xs font-bold uppercase tracking-widest">
+          <i class="bi bi-lightning-charge"></i> Key Impact
+        </div>
+        <ul class="grid gap-3">
+          <li *ngFor="let point of job.impact" class="flex items-start gap-3 text-sm text-neutral-300">
+            <span class="mt-2 w-1.5 h-1.5 bg-blue-500 rounded-full shrink-0 shadow-[0_0_5px_rgba(59,130,246,0.8)]"></span>
+            <span class="leading-relaxed">{{ point }}</span>
+          </li>
+        </ul>
+      </app-glass-card>
     </div>
-
   </div>
-
-  <hr class="mt-5">
-
-  <div class="row mt-5">
-    <div class="col-12 col-lg-4">
-      <h2 class="mb-4">Projects</h2>
-
-      <ul>
-        <li><a href="https://ai.etiennenoel.com">Built-In AI Playground</a></li>
-        <li><a href="https://github.com/microsoft/tsyringe">TSyringe (maintainer)</a></li>
-      </ul>
-    </div>
-<!--    <div class="col-12 col-lg-8">-->
-<!--      <div class="col-12 col-lg-5">-->
-<!--      <h2 class="mb-4">Latest Articles</h2>-->
-
-<!--      <div class="card shadow">-->
-<!--        <div class="card-body p-0">-->
-<!--          <div>-->
-<!--            <img class="img-fluid" src="images/neural_networks.jpeg" alt="Neural Networks"></div>-->
-
-<!--          <div class="p-4">-->
-<!--            <h3 class="h4 mb-3" style="font-weight: bold">What are Neural Networks?</h3>-->
-<!--            <p>Building a neural network that can "predict" if your child will want to play outside? Step-by-step, let's figure out how they work using... <a class="stretched-link" routerLink="">Read more</a></p>-->
-<!--          </div>-->
-<!--        </div>-->
-<!--        <div class="card-footer p-4 text-muted bg-white">-->
-<!--          <i class="bi bi-calendar3-event"></i> May 7, 2025-->
-<!--        </div>-->
-<!--      </div>-->
-<!--    </div>-->
-<!--    </div>-->
-  </div>
-
-<!--  <div class="row mt-4">-->
-<!--    <div class="col-12 order-2 col-md-7">-->
-<!--      <h2 class="mb-4">About Me</h2>-->
-
-<!--      <p>I'm an AI Engineering manager in San Francisco, leading Google Chrome's Web AI Platform:</p>-->
-<!--      <div>-->
-<!--        <ul>-->
-<!--          <li>-->
-<!--            <a href="https://developer.chrome.com/docs/ai/built-in">Built-In-->
-<!--              AI APIs</a>-->
-<!--          </li>-->
-<!--          <li>WebNN</li>-->
-<!--          <li>Infrastructure & Model quality for On-Device Gemini Nano</li>-->
-<!--        </ul>-->
-
-<!--      </div>-->
-<!--      <p>Just before, I was the Software Engineering Manager for Storage in Google Chrome (File, FileSystemHandle,-->
-<!--        IndexedDB, Cache Storage, WebSQL, etc.).</p>-->
-
-<!--      <p>Prior, I worked as a Software Engineering Manager for <a href="https://www.appdirect.com/">AppDirect</a> where-->
-<!--        I led the Invoicing, Payments and Customer Balance teams.</p>-->
-
-<!--      <p>From 2017-2021, I was Chief Technology Officer of <a href="https://boostmi.com" rel="noreferrer">Boostmi-->
-<!--        Technologies Inc.</a> where I led an amazing team of engineers into building a robust Roadside Assistance Cloud-->
-<!--        Platform, Mobile and Web Applications and AI infrastructure.</p>-->
-
-<!--      <p>Early in my career, I led a team at <a href="https://cyme.com">CYME Eaton</a> where we built the CYME Server-->
-<!--        and accompanying Web Applications.</p>-->
-<!--    </div>-->
-<!--    <div class="col-12 order-1 order-md-2 col-re col-md-4 offset-md-1 d-flex justify-content-center flex-column">-->
-<!--      <img src="/images/profile.png" class="img-fluid">-->
-<!--    </div>-->
-<!--  </div>-->
 </div>
-
-<!--<ul>-->
-<!--  <li><a href="https://linkedin.com/in/enoel19" target="_blank"><i class="bi bi-linkedin"></i> LinkedIn</a></li>-->
-<!--  <li><a href="https://twitter.com/etiennenoel" target="_blank"><i class="bi bi-twitter-x"></i> &#64;etiennenoel</a></li>-->
-<!--</ul>-->
-
-<!--<h3>Personal projects</h3>-->
-<!--<ul>-->
-<!--  <li><a href="https://github.com/magieno/pristine-ts" target="_blank">Pristine (NodeJS Framework)</a></li>-->
-<!--</ul>-->
-
-<!--<h3>Conférence</h3>-->
-<!--<ul>-->
-<!--  <li>25 Septembre 2023 - Conférence Cégep Saint-Jean-->
-<!--    <ul>-->
-<!--      <li><a href="https://app.sli.do/event/uy7iatyL1wVpZrtCTUCrom/live/questions?clusterId=eu1" target="_blank">Questions interactives</a></li>-->
-<!--      <li><a href="https://forms.gle/n8W8THi7nCVKsACs9" target="_blank">Formulaire de feedback</a></li>-->
-<!--    </ul>-->
-<!--  </li>-->
-<!--</ul>-->

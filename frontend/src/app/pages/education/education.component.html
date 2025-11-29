@@ -1,0 +1,38 @@
+<div class="py-12 animate-fade-in min-h-[80vh]">
+  <app-course-viewer *ngIf="activeCourse" [course]="activeCourse" (close)="closeCourseViewer()"></app-course-viewer>
+
+  <div class="flex items-end justify-between mb-12">
+    <div>
+      <h2 class="text-3xl font-bold text-white mb-2"><app-glitch-text text="Education Center"></app-glitch-text></h2>
+      <p class="text-neutral-400">Master the next generation of web capabilities.</p>
+    </div>
+    <i class="bi bi-mortarboard text-blue-500 opacity-50 text-3xl"></i>
+  </div>
+
+  <div class="grid md:grid-cols-2 gap-6">
+    <app-glass-card *ngFor="let course of courses; let i = index" class="flex flex-col h-full" (cardClick)="openCourseViewer(course)">
+      <div class="flex justify-between items-start mb-6">
+         <div class="p-3 bg-purple-500/10 rounded-lg text-purple-400">
+            <i class="bi bi-play-circle text-2xl"></i>
+         </div>
+         <span class="px-2 py-1 bg-white/5 text-xs font-mono text-neutral-400 rounded border border-white/5">
+           {{course.level}}
+         </span>
+      </div>
+
+      <h3 class="text-xl font-bold text-white mb-2 group-hover:text-blue-400 transition-colors">
+        {{course.title}}
+      </h3>
+      <p class="text-neutral-400 text-sm mb-6 flex-grow leading-relaxed">
+        {{course.desc}}
+      </p>
+
+      <div class="pt-4 border-t border-white/5 flex items-center justify-between text-xs text-neutral-500 font-mono">
+         <div class="flex items-center gap-2">
+           <i class="bi bi-file-earmark-text"></i> {{course.modules.length}} MODULES
+         </div>
+         <div>{{course.duration}}</div>
+      </div>
+    </app-glass-card>
+  </div>
+</div>

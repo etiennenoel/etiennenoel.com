@@ -1,0 +1,10 @@
+<div class="fixed bottom-8 left-1/2 -translate-x-1/2 z-50">
+  <div class="bg-black/60 backdrop-blur-xl border border-white/10 rounded-full p-2 flex gap-1 shadow-2xl shadow-black/80">
+    <app-nav-item
+      *ngFor="let tab of tabs"
+      [label]="tab"
+      [active]="activeTab === tab"
+      (itemClick)="onTabClick(tab)"
+    ></app-nav-item>
+  </div>
+</div>

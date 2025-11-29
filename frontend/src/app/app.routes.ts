@@ -4,6 +4,10 @@ import {RootComponent} from './components/root/root.component';
 import {LayoutComponent} from './components/layout/layout.component';
 import {HomeComponent} from './pages/home/home.component';
 import {ContactMeComponent} from './pages/contact-me/contact-me.component';
+import {AboutMeComponent} from './pages/about-me/about-me.component';
+import { ProjectsComponent } from './pages/projects/projects.component';
+import { EducationComponent } from './pages/education/education.component';
+import { ArticlesComponent } from './pages/articles/articles.component';
 
 export const routes: Routes = [
   {
@@ -15,8 +19,24 @@ export const routes: Routes = [
         component: HomeComponent,
       },
       {
+        path: "projects",
+        component: ProjectsComponent,
+      },
+      {
+        path: "education",
+        component: EducationComponent,
+      },
+      {
+        path: "articles",
+        component: ArticlesComponent,
+      },
+      {
         path: "contact-me",
         component: ContactMeComponent,
+      },
+      {
+        path: "about-me",
+        component: AboutMeComponent,
       },
       {
         path: "",

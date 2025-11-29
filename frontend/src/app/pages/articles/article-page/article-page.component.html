@@ -1,0 +1,48 @@
+<div class="fixed inset-0 z-[55] bg-[#050508] overflow-y-auto animate-fade-in">
+  <div class="max-w-3xl mx-auto px-6 py-20">
+    <button (click)="onClose()" class="mb-8 flex items-center gap-2 text-neutral-400 hover:text-white transition-colors">
+      <i class="bi bi-chevron-left text-xl"></i> Back to Articles
+    </button>
+
+    <div class="mb-12">
+      <span class="text-blue-400 font-mono text-sm px-2 py-1 bg-blue-500/10 rounded mb-4 inline-block">WEB.DEV</span>
+      <h1 class="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">{{ article?.title }}</h1>
+      <div class="flex gap-6 text-sm text-neutral-500 font-mono border-b border-white/10 pb-8">
+        <span class="flex items-center gap-2"><i class="bi bi-briefcase"></i> {{ article?.author }}</span>
+        <span class="flex items-center gap-2"><i class="bi bi-layout-text-sidebar"></i> {{ article?.category }}</span>
+        <span>{{ article?.readTime }} MIN READ</span>
+      </div>
+    </div>
+
+    <div class="prose prose-invert prose-lg max-w-none text-neutral-300">
+      <p class="text-xl text-neutral-300 leading-relaxed">
+        The web has evolved from a simple document viewer into a powerful application platform. However, one barrier remained for high-performance creative apps:
+        <strong class="text-white"> fast, synchronous access to local files.</strong>
+      </p>
+
+      <app-neo-image caption="File System Access API Architecture"></app-neo-image>
+
+      <h3 class="text-white font-bold">Accessing the Root</h3>
+      <p class="text-neutral-400">
+        To access the OPFS, you use the <code>navigator.storage</code> API. Unlike the user-visible file system, this storage area is optimized for random access and write performance.
+      </p>
+
+      <app-neo-code title="opfs-access.js" language="javascript">
+<!--{\`const root = await navigator.storage.getDirectory();-->
+<!--const fileHandle = await root.getFileHandle('draft.txt', { create: true });-->
+<!--const accessHandle = await fileHandle.createSyncAccessHandle();-->
+
+<!--// High-performance write-->
+<!--const writeBuffer = new TextEncoder().encode('Hello World');-->
+<!--accessHandle.write(writeBuffer, { at: 0 });-->
+<!--accessHandle.flush();-->
+<!--accessHandle.close();\`}-->
+      </app-neo-code>
+
+      <h3 class="text-white font-bold">Conclusion</h3>
+      <p class="text-neutral-400">
+        This API represents a paradigm shift. We are no longer just "uploading" files to the web; we are manipulating them directly in the browser's secure sandbox with native-like speed.
+      </p>
+    </div>
+  </div>
+</div>

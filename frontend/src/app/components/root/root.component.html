@@ -1,1 +1,6 @@
-<router-outlet></router-outlet>
+<app-neural-background></app-neural-background>
+
+<main class="min-h-screen bg-[#050508] text-neutral-200 font-sans selection:bg-blue-500/30 selection:text-blue-200 overflow-x-hidden">
+  <router-outlet></router-outlet>
+  <app-floating-nav [activeTab]="currentTab" (tabChange)="onTabChange($event)"></app-floating-nav>
+</main>
