@@ -11,7 +11,7 @@ export class ContentService {
   private homePageContent: HomePageContent = {
     typedTextFull: "Building the Intelligent Web.",
     heroItems: [
-      { iconClass: 'bi bi-cpu', label: "Gemini Nano", sub: "On-Device Inference" },
+      { iconClass: 'bi bi-cpu', label: "Gemini Nano", sub: "On-Device Inference" }, // Add link: https://developer.chrome.com/docs/ai/get-started#gemini_nano_in_chrome
       { iconClass: 'bi bi-lightning-charge', label: "WebNN", sub: "Hardware Acceleration" },
       { iconClass: 'bi bi-code', label: "TSyringe", sub: "Dependency Injection" },
       { iconClass: 'bi bi-command', label: "Built-in AI", sub: "Chrome APIs" },

@@ -13,8 +13,8 @@
   </h1>
 
   <p class="text-xl max-w-2xl leading-relaxed mb-10" [style.color]="'var(--text-muted)'">
-    I'm <span class="font-semibold" [style.color]="'var(--text-primary)'">Etienne Noël</span>, AI Engineering Manager at <span class="text-blue-400">Google Chrome</span>.
-    I engineer the infrastructure that lets the browser think for itself.
+    I'm <span class="font-semibold" [style.color]="'var(--text-primary)'">Etienne Noël</span>, AI Engineering Manager working on <span class="text-blue-400">Google Chrome</span>.
+    I engineer the infrastructure that lets Web Developers build and ship AI features for free.
   </p>
 
   <div class="flex flex-wrap gap-4">
@@ -44,7 +44,8 @@
     </button>
   </div>
 
-  <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-20">
+  <h3 class="mt-20 mb-4 text-2xl font-bold group-hover:text-blue-400 transition-colors">Led these Impactful Projects:</h3>
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
     <div *ngFor="let item of heroItems; let i = index" class="p-4 rounded-xl border backdrop-blur-sm transition-colors group" [style.border-color]="'var(--border-glass)'" [style.background-color]="'var(--bg-card)'" onMouseOver="this.style.borderColor='var(--border-glass-hover)'" onMouseOut="this.style.borderColor='var(--border-glass)'">
       <div class="text-blue-400 mb-2 group-hover:scale-110 transition-transform"><i [class]="item.iconClass"></i></div>
       <div class="font-semibold text-sm" [style.color]="'var(--text-primary)'">{{ item.label }}</div>

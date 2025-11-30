@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule, NgIf, NgFor } from '@angular/common';
-import { GlitchTextComponent } from '../../components/ui/glitch-text/glitch-text.component';
-import { GlassCardComponent } from '../../components/ui/glass-card/glass-card.component';
+import { GlitchTextComponent } from '../../components/glitch-text/glitch-text.component';
+import { GlassCardComponent } from '../../components/glass-card/glass-card.component';
 import { Course, CourseViewerComponent } from './course-viewer/course-viewer.component';
 
 @Component({

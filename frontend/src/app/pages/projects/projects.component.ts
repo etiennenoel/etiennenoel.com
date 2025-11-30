@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Project } from '../../components/ui/modal/modal.component';
+import { Project } from '../../components/modal/modal.component';
 
 @Component({
   selector: 'app-projects',

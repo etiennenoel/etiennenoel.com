@@ -13,7 +13,7 @@ export class FloatingNavComponent {
   @Input() activeTab: string = 'Home'; // Default active tab
   @Output() tabChange = new EventEmitter<string>();
 
-  tabs: string[] = ['Home', 'Projects', 'Education', 'Articles'];
+  tabs: string[] = ['Home', 'Projects', 'Publications'];
 
   constructor(private router: Router) {} // Inject Router
 
@@ -29,8 +29,7 @@ export class FloatingNavComponent {
     switch (tab) {
       case 'Home': return ''; // Default route for home
       case 'Projects': return 'projects';
-      case 'Education': return 'education';
-      case 'Articles': return 'articles';
+      case 'Publications': return 'articles';
       default: return '';
     }
   }

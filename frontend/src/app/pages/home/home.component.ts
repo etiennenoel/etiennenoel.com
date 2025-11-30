@@ -1,8 +1,8 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
 import { CommonModule, NgFor, NgIf } from '@angular/common'; // Import CommonModule for NgFor and NgIf
-import { GlitchTextComponent } from '../../components/ui/glitch-text/glitch-text.component';
-import { GlassCardComponent } from '../../components/ui/glass-card/glass-card.component';
+import { GlitchTextComponent } from '../../components/glitch-text/glitch-text.component';
+import { GlassCardComponent } from '../../components/glass-card/glass-card.component';
 import { ContentService } from '../../services/content.service'; // Import ContentService
 import { HeroItem } from '../../models/hero-item.model';
 import { Job } from '../../models/job.model';

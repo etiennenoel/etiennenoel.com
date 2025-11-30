@@ -2,7 +2,7 @@
   <app-modal [project]="selectedProject" [isOpen]="!!selectedProject" (close)="closeProjectDetails()"></app-modal>
 
   <div class="flex items-end justify-between mb-12">
-    <h2 class="text-3xl font-bold" [style.color]="'var(--text-primary)'"><app-glitch-text text="Selected Projects"></app-glitch-text></h2>
+    <h2 class="text-3xl font-bold" [style.color]="'var(--text-primary)'"><app-glitch-text text="Projects"></app-glitch-text></h2>
   </div>
   <div class="grid lg:grid-cols-2 gap-6">
     <app-glass-card *ngFor="let p of projects; let i = index" class="flex flex-col h-full" (cardClick)="openProjectDetails(p)">

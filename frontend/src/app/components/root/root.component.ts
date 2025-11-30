@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NavigationEnd, Router, RouterOutlet } from "@angular/router";
-import { NeuralBackgroundComponent } from '../core/neural-background/neural-background.component';
-import { FloatingNavComponent } from '../core/floating-nav/floating-nav.component';
+import { NeuralBackgroundComponent } from '../neural-background/neural-background.component';
+import { FloatingNavComponent } from '../floating-nav/floating-nav.component';
 import { filter, map } from 'rxjs/operators';
 import { Title } from '@angular/platform-browser';
 
