@@ -6,8 +6,8 @@
   [style.background-color]="active ? 'var(--text-primary)' : 'transparent'"
   [style.color]="active ? 'var(--bg-main)' : 'var(--text-muted)'"
   [style.box-shadow]="active ? '0 0 20px rgba(255,255,255,0.3)' : 'none'"
+  (mouseover)="onMouseOver($event)"
+  (mouseout)="onMouseOut($event)"
 >
-<!--  (mouseover)="!active && ($event.target.style.color='var(&#45;&#45;text-primary)'); !active && ($event.target.style.backgroundColor='var(&#45;&#45;bg-glass-hover)')"-->
-<!--  (mouseout)="!active && ($event.target.style.color='var(&#45;&#45;text-muted)'); !active && ($event.target.style.backgroundColor='transparent')"-->
   {{ label }}
 </button>

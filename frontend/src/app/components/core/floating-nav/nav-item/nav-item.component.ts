@@ -14,4 +14,20 @@ export class NavItemComponent {
   onClick(): void {
     this.itemClick.emit();
   }
+
+  onMouseOver(event: MouseEvent): void {
+    if (!this.active) {
+      const target = event.target as HTMLElement;
+      target.style.color = 'var(--text-primary)';
+      target.style.backgroundColor = 'var(--bg-glass-hover)';
+    }
+  }
+
+  onMouseOut(event: MouseEvent): void {
+    if (!this.active) {
+      const target = event.target as HTMLElement;
+      target.style.color = 'var(--text-muted)';
+      target.style.backgroundColor = 'transparent';
+    }
+  }
 }

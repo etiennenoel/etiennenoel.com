@@ -1,14 +1,76 @@
-.theme-toggle-button {
-  background: none;
-  border: none;
-  cursor: pointer;
-  font-size: 1.5rem;
-  padding: 0;
+.theme-toggle-container {
   display: flex;
   align-items: center;
-  justify-content: center;
+  gap: 8px;
+}
+
+.theme-switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 28px;
+  flex-shrink: 0;
+}
+
+.theme-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--bg-glass);
+  border: 1px solid var(--text-muted);
+  transition: .4s;
+  border-radius: 28px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 3px;
+  bottom: 3px;
+  background-color: var(--text-primary);
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider:before {
+  transform: translateX(22px);
 }
 
 .icon {
-  transition: opacity 0.3s ease-in-out;
+  display: flex;
+  align-items: center;
+}
+
+.icon svg {
+  width: 18px;
+  height: 18px;
+  color: var(--text-muted);
+  opacity: 0.5;
+  transition: color 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.icon.sun svg {
+  stroke: currentColor;
+  fill: none;
+}
+
+.icon.moon svg {
+  fill: currentColor;
+  stroke: none;
+}
+
+.icon.active svg {
+  color: var(--text-primary);
+  opacity: 1;
 }
