@@ -29,6 +29,13 @@
       </span>
     </button>
     <button
+      (click)="onScrollToEducation()"
+      class="px-8 py-4 rounded-lg border font-medium transition-all flex items-center gap-2"
+      [style.border-color]="'var(--border-glass)'" [style.color]="'var(--text-primary)'" onMouseOver="this.style.backgroundColor='var(--bg-glass-hover)'" onMouseOut="this.style.backgroundColor='transparent'"
+    >
+      <i class="bi bi-mortarboard"></i> Education
+    </button>
+    <button
       (click)="onNavigateToProjects()"
       class="px-8 py-4 rounded-lg border font-medium transition-all flex items-center gap-2"
       [style.border-color]="'var(--border-glass)'" [style.color]="'var(--text-primary)'" onMouseOver="this.style.backgroundColor='var(--bg-glass-hover)'" onMouseOut="this.style.backgroundColor='transparent'"
@@ -88,3 +95,35 @@
     </div>
   </div>
 </div>
+
+<div id="education" class="space-y-12 animate-fade-in pt-24 pb-20 border-t" [style.border-color]="'var(--border-glass)'">
+  <div class="flex items-end justify-between border-b pb-6" [style.border-color]="'var(--border-glass)'">
+    <div>
+      <h2 class="text-3xl font-bold mb-2" [style.color]="'var(--text-primary)'"><app-glitch-text text="Education"></app-glitch-text></h2>
+      <p [style.color]="'var(--text-muted)'">Academic background and degrees.</p>
+    </div>
+    <i class="bi bi-mortarboard text-blue-500 opacity-50 text-3xl"></i>
+  </div>
+
+  <div class="relative border-l-2 ml-3 md:ml-6 space-y-16" [style.border-color]="'var(--border-glass)'">
+    <div *ngFor="let edu of education; let idx = index" class="relative pl-8 md:pl-12 group">
+      <div class="absolute -left-[7px] top-2 w-[12px] h-[12px] rounded-full border-2 border-blue-500 shadow-[0_0_10px_rgba(59,130,246,0.5)]" [style.background-color]="'var(--bg-main)'"></div>
+
+      <div class="flex flex-col md:flex-row md:items-start justify-between mb-4 gap-2">
+        <div>
+          <h3 class="text-2xl font-bold group-hover:text-blue-400 transition-colors" [style.color]="'var(--text-primary)'">{{ edu.degree }} - {{ edu.major }}</h3>
+          <div class="text-lg font-medium" [style.color]="'var(--text-secondary)'">{{ edu.institution }}</div>
+        </div>
+        <div class="text-sm font-mono text-right px-3 py-1 rounded border" [style.color]="'var(--text-muted)'" [style.background-color]="'var(--bg-card)'" [style.border-color]="'var(--border-glass) !important'">
+          <div>Graduated: {{ edu.graduationYear }}</div>
+          <div>{{ edu.location }}</div>
+        </div>
+      </div>
+
+      <p *ngIf="edu.description" class="mb-6 max-w-3xl leading-relaxed text-lg" [style.color]="'var(--text-muted)'">
+        {{ edu.description }}
+      </p>
+    </div>
+  </div>
+</div>
+

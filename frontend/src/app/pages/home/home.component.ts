@@ -6,6 +6,7 @@ import { GlassCardComponent } from '../../components/ui/glass-card/glass-card.co
 import { ContentService } from '../../services/content.service'; // Import ContentService
 import { HeroItem } from '../../models/hero-item.model';
 import { Job } from '../../models/job.model';
+import { Education } from '../../models/education.model';
 
 @Component({
   selector: 'app-home',
@@ -22,6 +23,8 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   jobs: Job[] = []; // Will be populated from ContentService
 
+  education: Education[] = []; // Will be populated from ContentService
+
   constructor(private router: Router, private contentService: ContentService) { }
 
   ngOnInit(): void {
@@ -29,6 +32,7 @@ export class HomeComponent implements OnInit, OnDestroy {
     this.fullText = homeContent.typedTextFull;
     this.heroItems = homeContent.heroItems;
     this.jobs = homeContent.jobs;
+    this.education = homeContent.education;
 
     let index = 0;
     this.typingInterval = setInterval(() => {
@@ -48,6 +52,10 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   onScrollToExperience(): void {
     document.getElementById('experience')?.scrollIntoView({ behavior: 'smooth' });
+  }
+
+  onScrollToEducation(): void {
+    document.getElementById('education')?.scrollIntoView({ behavior: 'smooth' });
   }
 
   onNavigateToProjects(): void {

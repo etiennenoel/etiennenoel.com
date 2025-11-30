@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HomePageContent } from '../models/home-page-content.model';
 import { AboutMeContent } from '../models/about-me-content.model'; // Import AboutMeContent
+import { Education } from '../models/education.model';
 
 @Injectable({
   providedIn: 'root'
@@ -18,8 +19,8 @@ export class ContentService {
     jobs: [
       {
         company: "Google Chrome",
-        role: "Engineering Manager, Web AI Platform",
-        period: "2023 - Present",
+        role: "Web AI Lead Engineering Manager, Web AI Platform",
+        period: "2024 - Present",
         location: "San Francisco, CA",
         desc: "Leading the engineering efforts to bring native AI capabilities to the web platform.",
         impact: [
@@ -31,7 +32,7 @@ export class ContentService {
       {
         company: "Google Chrome",
         role: "Engineering Manager, Capabilities (Project Fugu)",
-        period: "2020 - 2023",
+        period: "2022 - 2024",
         location: "San Francisco, CA",
         desc: "Managed the team responsible for closing the gap between native and web capabilities.",
         impact: [
@@ -39,17 +40,22 @@ export class ContentService {
           "Drove adoption of PWA standards, resulting in a 40% increase in desktop PWA installations.",
           "Led the deprecation strategy for legacy APIs (Web SQL), improving platform security and stability."
         ]
+      }
+    ],
+    education: [
+      {
+        institution: "Ecole Polytechnique de Montreal",
+        degree: "Bachelor Degree",
+        major: "Software Engineering",
+        graduationYear: "2014",
+        location: "Montreal, QC"
       },
       {
-        company: "Open Source",
-        role: "Maintainer",
-        period: "2019 - Present",
-        location: "Global",
-        desc: "Active maintenance and stewardship of critical ecosystem tools.",
-        impact: [
-          "Maintainer of TSyringe (Microsoft), a dependency injection library with 4M+ monthly downloads.",
-          "Established community governance models and automated release pipelines to ensure project sustainability."
-        ]
+        institution: "College Champlain, Saint-Lambert",
+        degree: "DEC",
+        major: "Pure & Applied Sciences",
+        graduationYear: "2009",
+        location: "Saint-Lambert, QC"
       }
     ]
   };
