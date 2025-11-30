@@ -6,43 +6,15 @@
 
     <div class="mb-12">
       <span class="text-blue-400 font-mono text-sm px-2 py-1 bg-blue-500/10 rounded mb-4 inline-block">WEB.DEV</span>
-      <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight" [style.color]="'var(--text-primary)'">{{ article?.title }}</h1>
+      <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight" [style.color]="'var(--text-primary)'">{{ articleMetadata?.title }}</h1>
       <div class="flex gap-6 text-sm font-mono border-b pb-8" [style.color]="'var(--text-muted)'" [style.border-color]="'var(--border-glass)'">
-        <span class="flex items-center gap-2"><i class="bi bi-briefcase"></i> {{ article?.author }}</span>
-        <span class="flex items-center gap-2"><i class="bi bi-layout-text-sidebar"></i> {{ article?.category }}</span>
-        <span>{{ article?.readTime }} MIN READ</span>
+        <span class="flex items-center gap-2"><i class="bi bi-briefcase"></i> {{ articleMetadata?.author }}</span>
+        <span class="flex items-center gap-2"><i class="bi bi-layout-text-sidebar"></i> {{ articleMetadata?.category }}</span>
+        <span>{{ articleMetadata?.readTime }} MIN READ</span>
       </div>
     </div>
 
-    <div class="prose prose-invert prose-lg max-w-none" [style.color]="'var(--text-secondary)'">
-      <p class="text-xl leading-relaxed" [style.color]="'var(--text-secondary)'">
-        The web has evolved from a simple document viewer into a powerful application platform. However, one barrier remained for high-performance creative apps:
-        <strong [style.color]="'var(--text-primary)'"> fast, synchronous access to local files.</strong>
-      </p>
-
-      <app-neo-image caption="File System Access API Architecture"></app-neo-image>
-
-      <h3 [style.color]="'var(--text-primary)'" class="font-bold">Accessing the Root</h3>
-      <p [style.color]="'var(--text-muted)'">
-        To access the OPFS, you use the <code>navigator.storage</code> API. Unlike the user-visible file system, this storage area is optimized for random access and write performance.
-      </p>
-
-      <app-neo-code title="opfs-access.js" language="javascript">
-<!--{\`const root = await navigator.storage.getDirectory();-->
-<!--const fileHandle = await root.getFileHandle('draft.txt', { create: true });-->
-<!--const accessHandle = await fileHandle.createSyncAccessHandle();-->
-
-<!--// High-performance write-->
-<!--const writeBuffer = new TextEncoder().encode('Hello World');-->
-<!--accessHandle.write(writeBuffer, { at: 0 });-->
-<!--accessHandle.flush();-->
-<!--accessHandle.close();\`}-->
-      </app-neo-code>
-
-      <h3 [style.color]="'var(--text-primary)'" class="font-bold">Conclusion</h3>
-      <p [style.color]="'var(--text-muted)'">
-        This API represents a paradigm shift. We are no longer just "uploading" files to the web; we are manipulating them directly in the browser's secure sandbox with native-like speed.
-      </p>
+    <div class="prose prose-invert prose-lg max-w-none" [style.color]="'var(--text-secondary)'" [innerHTML]="sanitizedHtmlContent">
     </div>
   </div>
 </div>

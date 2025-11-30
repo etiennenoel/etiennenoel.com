@@ -3,6 +3,9 @@ import { Router } from '@angular/router';
 import { CommonModule, NgFor, NgIf } from '@angular/common'; // Import CommonModule for NgFor and NgIf
 import { GlitchTextComponent } from '../../components/ui/glitch-text/glitch-text.component';
 import { GlassCardComponent } from '../../components/ui/glass-card/glass-card.component';
+import { ContentService } from '../../services/content.service'; // Import ContentService
+import { HeroItem } from '../../models/hero-item.model';
+import { Job } from '../../models/job.model';
 
 @Component({
   selector: 'app-home',
@@ -12,57 +15,21 @@ import { GlassCardComponent } from '../../components/ui/glass-card/glass-card.co
 })
 export class HomeComponent implements OnInit, OnDestroy {
   typedText: string = '';
-  fullText: string = "Building the Intelligent Web.";
+  fullText: string = ""; // Will be populated from ContentService
   private typingInterval: any;
 
-  heroItems = [
-    { iconClass: 'bi bi-cpu', label: "Gemini Nano", sub: "On-Device Inference" },
-    { iconClass: 'bi bi-lightning-charge', label: "WebNN", sub: "Hardware Acceleration" },
-    { iconClass: 'bi bi-code', label: "TSyringe", sub: "Dependency Injection" },
-    { iconClass: 'bi bi-command', label: "Built-in AI", sub: "Chrome APIs" },
-  ];
+  heroItems: HeroItem[] = []; // Will be populated from ContentService
 
-  jobs = [
-    {
-      company: "Google Chrome",
-      role: "Engineering Manager, Web AI Platform",
-      period: "2023 - Present",
-      location: "San Francisco, CA",
-      desc: "Leading the engineering efforts to bring native AI capabilities to the web platform.",
-      impact: [
-        "Launched Built-in AI APIs, enabling privacy-preserving local inference for millions of users.",
-        "Scaling the WebNN implementation to unlock NPU/GPU hardware acceleration across all major OSs.",
-        "Managing cross-functional teams (Eng, PM, Research) to define the standards for on-device GenAI."
-      ]
-    },
-    {
-      company: "Google Chrome",
-      role: "Engineering Manager, Capabilities (Project Fugu)",
-      period: "2020 - 2023",
-      location: "San Francisco, CA",
-      desc: "Managed the team responsible for closing the gap between native and web capabilities.",
-      impact: [
-        "Shipped the File System Access API, enabling advanced productivity apps (Photoshop, VS Code) to run fully in the browser.",
-        "Drove adoption of PWA standards, resulting in a 40% increase in desktop PWA installations.",
-        "Led the deprecation strategy for legacy APIs (Web SQL), improving platform security and stability."
-      ]
-    },
-    {
-      company: "Open Source",
-      role: "Maintainer",
-      period: "2019 - Present",
-      location: "Global",
-      desc: "Active maintenance and stewardship of critical ecosystem tools.",
-      impact: [
-        "Maintainer of TSyringe (Microsoft), a dependency injection library with 4M+ monthly downloads.",
-        "Established community governance models and automated release pipelines to ensure project sustainability."
-      ]
-    }
-  ];
+  jobs: Job[] = []; // Will be populated from ContentService
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private contentService: ContentService) { }
 
   ngOnInit(): void {
+    const homeContent = this.contentService.getHomePageContent();
+    this.fullText = homeContent.typedTextFull;
+    this.heroItems = homeContent.heroItems;
+    this.jobs = homeContent.jobs;
+
     let index = 0;
     this.typingInterval = setInterval(() => {
       this.typedText = this.fullText.slice(0, index);
@@ -87,3 +54,4 @@ export class HomeComponent implements OnInit, OnDestroy {
     this.router.navigate(['/projects']);
   }
 }
+
