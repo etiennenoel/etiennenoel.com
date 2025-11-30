@@ -1,18 +1,18 @@
 <div class="py-12 relative z-10 animate-fade-in min-h-[80vh]">
-  <app-modal [project]="selectedProject" [isOpen]="!!selectedProject" (close)="closeProjectDetails()"></app-modal>
-
   <div class="flex items-end justify-between mb-12">
     <h2 class="text-3xl font-bold" [style.color]="'var(--text-primary)'"><app-glitch-text text="Projects"></app-glitch-text></h2>
   </div>
   <div class="grid lg:grid-cols-2 gap-6">
-    <app-glass-card *ngFor="let p of projects; let i = index" class="flex flex-col h-full" (cardClick)="openProjectDetails(p)">
-      <div class="flex justify-between items-start mb-6">
-        <div class="p-3 bg-blue-500/10 rounded-lg text-blue-400"><i class="bi bi-cpu"></i></div>
-        <i class="bi bi-box-arrow-up-right transition-colors" [style.color]="'var(--text-muted)'" onMouseOver="this.style.color='var(--text-primary)'" onMouseOut="this.style.color='var(--text-muted)'"></i>
-      </div>
-      <h3 class="text-xl font-bold mb-1" [style.color]="'var(--text-primary)'">{{p.title}}</h3>
-      <span class="text-xs font-mono text-blue-400 mb-4 block">{{p.role}}</span>
-      <p class="text-sm leading-relaxed mb-6 flex-grow" [style.color]="'var(--text-muted)'">{{p.desc}}</p>
-    </app-glass-card>
+    <a *ngFor="let p of projects" [href]="p.url" target="_blank" class="block h-full">
+      <app-glass-card class="flex flex-col h-full">
+        <div class="flex justify-between items-start mb-6">
+          <div class="p-3 bg-blue-500/10 rounded-lg text-blue-400"><i [class]="p.iconClass"></i></div>
+          <i class="bi bi-box-arrow-up-right transition-colors" [style.color]="'var(--text-muted)'" onMouseOver="this.style.color='var(--text-primary)'" onMouseOut="this.style.color='var(--text-muted)'"></i>
+        </div>
+        <h3 class="text-xl font-bold mb-1" [style.color]="'var(--text-primary)'">{{p.name}}</h3>
+        <span class="text-xs font-mono text-blue-400 mb-4 block">{{p.role}}</span>
+        <p class="text-sm leading-relaxed mb-6 flex-grow" [style.color]="'var(--text-muted)'">{{p.description}}</p>
+      </app-glass-card>
+    </a>
   </div>
 </div>

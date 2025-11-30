@@ -2,20 +2,97 @@ import { Injectable } from '@angular/core';
 import { HomePageContent } from '../models/home-page-content.model';
 import { AboutMeContent } from '../models/about-me-content.model'; // Import AboutMeContent
 import { Education } from '../models/education.model';
+import { Project } from '../models/project.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ContentService {
 
+  private projects: Project[] = [
+    {
+      name: 'Built-In AI APIs',
+      description: 'Standardizing browser APIs for on-device inference.',
+      url: 'https://developer.chrome.com/docs/ai/built-in',
+      iconClass: 'bi bi-command',
+      tags: ['Web AI', 'Chrome', 'API Design'],
+      role: 'Engineering Lead',
+      stat: '1B+ Users',
+      challenge: 'Running LLMs in a browser was historically prohibited by hardware constraints and memory limits. Developers relied on costly cloud inference.',
+      solution: 'We engineered \'Built-in AI\' by embedding Gemini Nano directly into the Chrome binary, developing an IPC optimization layer to stream tokens with near-zero overhead.',
+    },
+    {
+      name: 'Gemini Nano in Chrome',
+      description: 'Integrating Google\'s most efficient model directly into the browser.',
+      url: 'https://developer.chrome.com/docs/ai/get-started#gemini_nano_in_chrome',
+      iconClass: 'bi bi-cpu',
+      tags: ['Web AI', 'Chrome', 'On-Device LLM'],
+      role: 'Engineering Lead',
+      stat: '1B+ Users',
+      challenge: 'Challenge placeholder',
+      solution: 'Solution placeholder',
+    },
+    {
+      name: 'WebNN API',
+      description: 'Hardware acceleration for neural networks on the web.',
+      url: 'https://www.w3.org/TR/webnn/',
+      iconClass: 'bi bi-lightning-charge',
+      tags: ['Web AI', 'W3C', 'Hardware'],
+      role: 'Contributor',
+      stat: 'W3C Standard',
+      challenge: 'Challenge placeholder',
+      solution: 'Solution placeholder',
+    },
+    {
+      name: 'Built-In AI Playground',
+      description: 'An interactive playground to test and experiment with Chrome\'s Built-In AI.',
+      url: 'https://ai.etiennenoel.com/',
+      iconClass: 'bi bi-joystick',
+      tags: ['Web App', 'Angular', 'Web AI'],
+      role: 'Creator',
+      stat: 'Side Project',
+      challenge: 'Challenge placeholder',
+      solution: 'Solution placeholder',
+    },
+    {
+      name: 'Web AI Studio',
+      description: 'A studio to create, test, and share AI models for the web.',
+      url: 'https://web-ai.studio/',
+      iconClass: 'bi bi-palette',
+      tags: ['Web App', 'Angular', 'Web AI'],
+      role: 'Creator',
+      stat: 'Side Project',
+      challenge: 'Challenge placeholder',
+      solution: 'Solution placeholder',
+    },
+    {
+      name: 'Pristine-TS',
+      description: 'A lightweight, modular, and extensible framework for NodeJS.',
+      url: 'https://pristine.etiennenoel.com/',
+      iconClass: 'bi bi-shield-check',
+      tags: ['Open Source', 'NodeJS', 'Framework'],
+      role: 'Creator',
+      stat: 'Side Project',
+      challenge: 'Challenge placeholder',
+      solution: 'Solution placeholder',
+    },
+    {
+      name: 'TSyringe (Maintainer)',
+      description: 'A lightweight dependency injection container for TypeScript.',
+      url: 'https://github.com/microsoft/tsyringe',
+      iconClass: 'bi bi-code',
+      tags: ['Open Source', 'TypeScript', 'DI'],
+      role: 'Maintainer',
+      stat: '4M+ Downloads/mo',
+      challenge: 'TypeScript developers needed a DI solution that felt \'native\' using decorators without massive boilerplate or runtime overhead.',
+      solution: 'TSyringe leverages reflect-metadata to automatically infer dependency types from constructor signatures, keeping bundle size under 3KB.',
+    },
+  ];
+
   private homePageContent: HomePageContent = {
     typedTextFull: "Building the Intelligent Web.",
-    heroItems: [
-      { iconClass: 'bi bi-cpu', label: "Gemini Nano", sub: "On-Device Inference" }, // Add link: https://developer.chrome.com/docs/ai/get-started#gemini_nano_in_chrome
-      { iconClass: 'bi bi-lightning-charge', label: "WebNN", sub: "Hardware Acceleration" },
-      { iconClass: 'bi bi-code', label: "TSyringe", sub: "Dependency Injection" },
-      { iconClass: 'bi bi-command', label: "Built-in AI", sub: "Chrome APIs" },
-    ],
+    featuredProjects: this.projects.slice(0, 3),
+    projects: this.projects,
     jobs: [
       {
         company: "Google Chrome",
@@ -68,6 +145,10 @@ export class ContentService {
 
   getHomePageContent(): HomePageContent {
     return this.homePageContent;
+  }
+
+  getProjects(): Project[] {
+    return this.projects;
   }
 
   getAboutMeContent(): AboutMeContent {

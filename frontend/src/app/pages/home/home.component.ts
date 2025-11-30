@@ -1,12 +1,10 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
 import { CommonModule, NgFor, NgIf } from '@angular/common'; // Import CommonModule for NgFor and NgIf
-import { GlitchTextComponent } from '../../components/glitch-text/glitch-text.component';
-import { GlassCardComponent } from '../../components/glass-card/glass-card.component';
 import { ContentService } from '../../services/content.service'; // Import ContentService
-import { HeroItem } from '../../models/hero-item.model';
 import { Job } from '../../models/job.model';
 import { Education } from '../../models/education.model';
+import { Project } from '../../models/project.model';
 
 @Component({
   selector: 'app-home',
@@ -19,7 +17,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   fullText: string = ""; // Will be populated from ContentService
   private typingInterval: any;
 
-  heroItems: HeroItem[] = []; // Will be populated from ContentService
+  featuredProjects: Project[] = []; // Will be populated from ContentService
 
   jobs: Job[] = []; // Will be populated from ContentService
 
@@ -30,7 +28,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     const homeContent = this.contentService.getHomePageContent();
     this.fullText = homeContent.typedTextFull;
-    this.heroItems = homeContent.heroItems;
+    this.featuredProjects = homeContent.featuredProjects;
     this.jobs = homeContent.jobs;
     this.education = homeContent.education;
 

@@ -6,7 +6,7 @@
       <div class="flex items-center gap-2 text-xs font-mono" [style.color]="'var(--text-muted)'">
         <i class="bi bi-terminal text-blue-500"></i>
         <span class="text-blue-400">PROJECT NEURAL LINK //</span>
-        <span [style.color]="'var(--text-primary)'">{{ project.title | uppercase }}</span>
+        <span [style.color]="'var(--text-primary)'">{{ project.name | uppercase }}</span>
       </div>
       <button (click)="onClose()" class="p-2 hover:bg-white/10 rounded-full transition-colors" [style.color]="'var(--text-primary)'" onMouseOver="this.style.backgroundColor='var(--bg-glass-hover)'" onMouseOut="this.style.backgroundColor='transparent'">
         <i class="bi bi-x-lg"></i>
@@ -20,8 +20,8 @@
             {{ t }}
           </span>
         </div>
-        <h1 class="text-4xl md:text-5xl font-bold mb-4" [style.color]="'var(--text-primary)'">{{ project.title }}</h1>
-        <p class="text-xl max-w-2xl leading-relaxed" [style.color]="'var(--text-secondary)'">{{ project.desc }}</p>
+        <h1 class="text-4xl md:text-5xl font-bold mb-4" [style.color]="'var(--text-primary)'">{{ project.name }}</h1>
+        <p class="text-xl max-w-2xl leading-relaxed" [style.color]="'var(--text-secondary)'">{{ project.description }}</p>
       </div>
 
       <div class="p-8 md:p-12 grid md:grid-cols-3 gap-12">

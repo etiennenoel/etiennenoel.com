@@ -35,26 +35,23 @@
     >
       <i class="bi bi-mortarboard"></i> Education
     </button>
-    <button
-      (click)="onNavigateToProjects()"
-      class="px-8 py-4 rounded-lg border font-medium transition-all flex items-center gap-2"
-      [style.border-color]="'var(--border-glass)'" [style.color]="'var(--text-primary)'" onMouseOver="this.style.backgroundColor='var(--bg-glass-hover)'" onMouseOut="this.style.backgroundColor='transparent'"
-    >
-      <i class="bi bi-terminal"></i> Projects
-    </button>
   </div>
 
-  <h3 class="mt-20 mb-4 text-2xl font-bold group-hover:text-blue-400 transition-colors">Led these Impactful Projects:</h3>
-  <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-    <div *ngFor="let item of heroItems; let i = index" class="p-4 rounded-xl border backdrop-blur-sm transition-colors group" [style.border-color]="'var(--border-glass)'" [style.background-color]="'var(--bg-card)'" onMouseOver="this.style.borderColor='var(--border-glass-hover)'" onMouseOut="this.style.borderColor='var(--border-glass)'">
-      <div class="text-blue-400 mb-2 group-hover:scale-110 transition-transform"><i [class]="item.iconClass"></i></div>
-      <div class="font-semibold text-sm" [style.color]="'var(--text-primary)'">{{ item.label }}</div>
-      <div class="text-xs" [style.color]="'var(--text-muted)'">{{ item.sub }}</div>
-    </div>
+  <h3 class="mt-20 mb-4 text-2xl font-bold group-hover:text-blue-400 transition-colors">Featured Projects:</h3>
+  <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+    <a *ngFor="let project of featuredProjects" [href]="project.url" target="_blank" class="p-4 rounded-xl border backdrop-blur-sm transition-colors group" [style.border-color]="'var(--border-glass)'" [style.background-color]="'var(--bg-card)'" onMouseOver="this.style.borderColor='var(--border-glass-hover)'" onMouseOut="this.style.borderColor='var(--border-glass)'">
+      <div class="text-blue-400 mb-2 group-hover:scale-110 transition-transform"><i [class]="project.iconClass"></i></div>
+      <div class="font-semibold text-sm" [style.color]="'var(--text-primary)'">{{ project.name }}</div>
+      <div class="text-xs" [style.color]="'var(--text-muted)'">{{ project.description }}</div>
+    </a>
+    <a (click)="onNavigateToProjects()" class="p-4 rounded-xl border backdrop-blur-sm transition-colors group flex flex-col items-center justify-center cursor-pointer" [style.border-color]="'var(--border-glass)'" [style.background-color]="'var(--bg-card)'" onMouseOver="this.style.borderColor='var(--border-glass-hover)'" onMouseOut="this.style.borderColor='var(--border-glass)'">
+      <div class="text-blue-400 mb-2 group-hover:scale-110 transition-transform"><i class="bi bi-arrow-right-circle"></i></div>
+      <div class="font-semibold text-sm" [style.color]="'var(--text-primary)'">See More</div>
+    </a>
   </div>
 </section>
 
-<div id="experience" class="space-y-12 animate-fade-in pt-24 pb-20 border-t" [style.border-color]="'var(--border-glass)'">
+<div id="experience" class="space-y-12 animate-fade-in pt-24 pb-20" [style.border-color]="'var(--border-glass)'">
   <div class="flex items-end justify-between border-b pb-6" [style.border-color]="'var(--border-glass)'">
     <div>
       <h2 class="text-3xl font-bold mb-2" [style.color]="'var(--text-primary)'"><app-glitch-text text="Work Experience"></app-glitch-text></h2>

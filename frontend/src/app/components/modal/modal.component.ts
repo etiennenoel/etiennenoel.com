@@ -1,15 +1,6 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { CommonModule, NgIf, NgFor } from '@angular/common'; // Import CommonModule
-
-export interface Project {
-  title: string;
-  role: string;
-  desc: string;
-  tags: string[];
-  stat: string;
-  challenge: string;
-  solution: string;
-}
+import { Project } from '../../models/project.model';
 
 @Component({
   selector: 'app-modal',
