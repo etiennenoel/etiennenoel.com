@@ -29,6 +29,11 @@ export class ArticlePageComponent implements OnInit {
     if (this.slug) {
       this.articleService.getArticle(this.slug).subscribe( (article: Article | undefined) => {
         if (article) {
+          if (article.metadata.isExternal && article.metadata.externalUrl) {
+            window.location.href = article.metadata.externalUrl;
+            return;
+          }
+
           this.article = article;
           this.articleMetadata = article.metadata;
           this.sanitizedHtmlContent = this.sanitizer.bypassSecurityTrustHtml(article.htmlContent);

@@ -13,7 +13,7 @@ export class ArticleService {
   private articlesMetadata$: Observable<ArticleMetadata[]>;
 
   constructor(private http: HttpClient) {
-    this.articlesMetadata$ = of(["the-origin-private-file-system"]).pipe(
+    this.articlesMetadata$ = this.http.get<string[]>('assets/articles/articles.json').pipe(
       switchMap(slugs => {
         if (!slugs || slugs.length === 0) {
           return of([]);

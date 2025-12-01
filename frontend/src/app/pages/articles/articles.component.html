@@ -29,6 +29,7 @@
       </div>
       <div class="flex items-center gap-4 mt-6 text-xs font-mono" [style.color]="'var(--text-muted)'">
         <span class="px-2 py-0.5 rounded bg-blue-500/10 text-blue-400">{{ article.category }}</span>
+        <span>{{ article.publicationDate | date:'mediumDate' }}</span>
         <span>{{ article.readTime }} READ</span>
       </div>
     </div>

@@ -6,6 +6,8 @@ export interface ArticleMetadata {
   readTime: string;
   summary: string;
   publicationDate: string;
+  isExternal?: boolean;
+  externalUrl?: string;
   // Add other metadata as needed, e.g., publishDate
 }
 

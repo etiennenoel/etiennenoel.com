@@ -23,7 +23,12 @@ export class ArticlesComponent implements OnInit {
   }
 
   openArticle(slug: string): void {
-    this.selectedArticleSlug = slug;
+    const article = this.articles.find(a => a.slug === slug);
+    if (article && article.isExternal && article.externalUrl) {
+      window.open(article.externalUrl, '_blank');
+    } else {
+      this.selectedArticleSlug = slug;
+    }
   }
 
   closeArticle(): void {

@@ -4,7 +4,7 @@ author: Etienne Noël
 category: Performance
 readTime: 8 MIN
 summary: A deep dive into high-performance file storage for the web, enabling applications like video editors and IDEs to run smoothly in the browser.
-publicationDate: '2025-11-29'
+publicationDate: '2023-10-26'
 ---
 # The Origin Private File System
 
