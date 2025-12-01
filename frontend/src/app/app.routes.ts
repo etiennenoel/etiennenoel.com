@@ -8,6 +8,7 @@ import {AboutMeComponent} from './pages/about-me/about-me.component';
 import { ProjectsComponent } from './pages/projects/projects.component';
 import { EducationComponent } from './pages/education/education.component';
 import { ArticlesComponent } from './pages/articles/articles.component';
+import { ArticlePageComponent } from './pages/articles/article-page/article-page.component';
 
 export const routes: Routes = [
   {
@@ -33,6 +34,10 @@ export const routes: Routes = [
           {
             path: "articles",
             component: ArticlesComponent,
+          },
+          {
+            path: "articles/:slug",
+            component: ArticlePageComponent,
           },
           {
             path: "contact-me",

@@ -1,37 +1,59 @@
 <div class="animate-fade-in pt-12 min-h-[80vh]">
-  <app-article-page *ngIf="selectedArticleSlug" [slug]="selectedArticleSlug" (close)="closeArticle()"></app-article-page>
-
   <div class="flex justify-between items-end mb-8">
     <h2 class="text-3xl font-bold" [style.color]="'var(--text-primary)'">Articles</h2>
     <span class="text-xs font-mono text-yellow-400">./notes --list</span>
   </div>
 
   <div class="grid gap-4">
-    <div
-      *ngFor="let article of articles"
-      (click)="openArticle(article.slug)"
-      class="group cursor-pointer p-6 rounded-xl border transition-all"
-      [style.border-color]="'var(--border-glass)'" [style.background-color]="'var(--bg-card)'"
-      onMouseOver="this.style.borderColor='var(--border-glass-hover)'; this.style.backgroundColor='var(--bg-glass-hover)'"
-      onMouseOut="this.style.borderColor='var(--border-glass)'; this.style.backgroundColor='var(--bg-card)'"
-    >
-      <div class="flex justify-between items-start">
-        <div>
-          <h3 class="text-xl font-bold group-hover:text-blue-400 transition-colors" [style.color]="'var(--text-primary)'">{{ article.title }}</h3>
-          <p class="text-sm mt-2 max-w-2xl" [style.color]="'var(--text-muted)'">
-            {{ article.summary }}
-          </p>
+    <ng-container *ngFor="let article of articles">
+      <a *ngIf="!article.isExternal" [routerLink]="['/articles', article.slug]"
+         class="group cursor-pointer p-6 rounded-xl border transition-all"
+         [style.border-color]="'var(--border-glass)'" [style.background-color]="'var(--bg-card)'"
+         onMouseOver="this.style.borderColor='var(--border-glass-hover)'; this.style.backgroundColor='var(--bg-glass-hover)'"
+         onMouseOut="this.style.borderColor='var(--border-glass)'; this.style.backgroundColor='var(--bg-card)'"
+      >
+        <div class="flex justify-between items-start">
+          <div>
+            <h3 class="text-xl font-bold group-hover:text-blue-400 transition-colors" [style.color]="'var(--text-primary)'">{{ article.title }}</h3>
+            <p class="text-sm mt-2 max-w-2xl" [style.color]="'var(--text-muted)'">
+              {{ article.summary }}
+            </p>
+          </div>
+          <div class="p-2 rounded-full transition-colors" [style.background-color]="'var(--bg-card)'"
+               onMouseOver="this.style.backgroundColor='var(--bg-glass-hover)'" onMouseOut="this.style.backgroundColor='var(--bg-card)'">
+            <i class="bi bi-chevron-right" [style.color]="'var(--text-muted)'"></i>
+          </div>
         </div>
-        <div class="p-2 rounded-full transition-colors" [style.background-color]="'var(--bg-card)'"
-             onMouseOver="this.style.backgroundColor='var(--bg-glass-hover)'" onMouseOut="this.style.backgroundColor='var(--bg-card)'">
-          <i class="bi bi-chevron-right" [style.color]="'var(--text-muted)'"></i>
+        <div class="flex items-center gap-4 mt-6 text-xs font-mono" [style.color]="'var(--text-muted)'">
+          <span class="px-2 py-0.5 rounded bg-blue-500/10 text-blue-400">{{ article.category }}</span>
+          <span>{{ article.publicationDate | date:'mediumDate' }}</span>
+          <span>{{ article.readTime }} READ</span>
         </div>
-      </div>
-      <div class="flex items-center gap-4 mt-6 text-xs font-mono" [style.color]="'var(--text-muted)'">
-        <span class="px-2 py-0.5 rounded bg-blue-500/10 text-blue-400">{{ article.category }}</span>
-        <span>{{ article.publicationDate | date:'mediumDate' }}</span>
-        <span>{{ article.readTime }} READ</span>
-      </div>
-    </div>
+      </a>
+      <a *ngIf="article.isExternal" [href]="article.externalUrl" target="_blank"
+         class="group cursor-pointer p-6 rounded-xl border transition-all"
+         [style.border-color]="'var(--border-glass)'" [style.background-color]="'var(--bg-card)'"
+         onMouseOver="this.style.borderColor='var(--border-glass-hover)'; this.style.backgroundColor='var(--bg-glass-hover)'"
+         onMouseOut="this.style.borderColor='var(--border-glass)'; this.style.backgroundColor='var(--bg-card)'"
+      >
+        <div class="flex justify-between items-start">
+          <div>
+            <h3 class="text-xl font-bold group-hover:text-blue-400 transition-colors" [style.color]="'var(--text-primary)'">{{ article.title }}</h3>
+            <p class="text-sm mt-2 max-w-2xl" [style.color]="'var(--text-muted)'">
+              {{ article.summary }}
+            </p>
+          </div>
+          <div class="p-2 rounded-full transition-colors" [style.background-color]="'var(--bg-card)'"
+               onMouseOver="this.style.backgroundColor='var(--bg-glass-hover)'" onMouseOut="this.style.backgroundColor='var(--bg-card)'">
+            <i class="bi bi-box-arrow-up-right" [style.color]="'var(--text-muted)'"></i>
+          </div>
+        </div>
+        <div class="flex items-center gap-4 mt-6 text-xs font-mono" [style.color]="'var(--text-muted)'">
+          <span class="px-2 py-0.5 rounded bg-blue-500/10 text-blue-400">{{ article.category }}</span>
+          <span>{{ article.publicationDate | date:'mediumDate' }}</span>
+          <span>{{ article.readTime }} READ</span>
+        </div>
+      </a>
+    </ng-container>
   </div>
 </div>

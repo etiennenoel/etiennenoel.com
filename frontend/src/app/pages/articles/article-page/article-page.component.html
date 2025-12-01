@@ -1,8 +1,8 @@
 <div class="fixed inset-0 z-[55] overflow-y-auto animate-fade-in" [style.background-color]="'var(--bg-main)'">
   <div class="max-w-3xl mx-auto px-6 py-20">
-    <button (click)="onClose()" class="mb-8 flex items-center gap-2 transition-colors" [style.color]="'var(--text-muted)'" onMouseOver="this.style.color='var(--text-primary)'" onMouseOut="this.style.color='var(--text-muted)'">
+    <a routerLink="/articles" class="mb-8 flex items-center gap-2 transition-colors" [style.color]="'var(--text-muted)'" onMouseOver="this.style.color='var(--text-primary)'" onMouseOut="this.style.color='var(--text-muted)'">
       <i class="bi bi-chevron-left text-xl"></i> Back to Articles
-    </button>
+    </a>
 
     <div class="mb-12">
       <span class="text-blue-400 font-mono text-sm px-2 py-1 bg-blue-500/10 rounded mb-4 inline-block">WEB.DEV</span>

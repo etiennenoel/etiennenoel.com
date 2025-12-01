@@ -11,7 +11,6 @@ import { ArticlePageComponent } from './article-page/article-page.component';
   styleUrl: './articles.component.scss'
 })
 export class ArticlesComponent implements OnInit {
-  selectedArticleSlug: string | null = null;
   articles: ArticleMetadata[] = [];
 
   constructor(private articleService: ArticleService) { }
@@ -20,18 +19,5 @@ export class ArticlesComponent implements OnInit {
     this.articleService.getArticlesMetadata().subscribe(articles => {
       this.articles = articles;
     });
-  }
-
-  openArticle(slug: string): void {
-    const article = this.articles.find(a => a.slug === slug);
-    if (article && article.isExternal && article.externalUrl) {
-      window.open(article.externalUrl, '_blank');
-    } else {
-      this.selectedArticleSlug = slug;
-    }
-  }
-
-  closeArticle(): void {
-    this.selectedArticleSlug = null;
   }
 }
