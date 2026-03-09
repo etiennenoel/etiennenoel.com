@@ -9,8 +9,13 @@ import { ProjectsComponent } from './pages/projects/projects.component';
 import { EducationComponent } from './pages/education/education.component';
 import { ArticlesComponent } from './pages/articles/articles.component';
 import { ArticlePageComponent } from './pages/articles/article-page/article-page.component';
+import { BonneFeteAudreyComponent } from './pages/bonne-fete-audrey/bonne-fete-audrey.component';
 
 export const routes: Routes = [
+  {
+    path: "bonne-fete-audrey",
+    component: BonneFeteAudreyComponent,
+  },
   {
     path: "",
     component: RootComponent,

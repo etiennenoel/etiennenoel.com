@@ -1,7 +1,9 @@
-<div class="max-sm:px-2 md:px-5">
+<app-neural-background></app-neural-background>
+
+<div class="max-sm:px-2 md:px-5 relative z-10">
   <app-header></app-header>
 
   <router-outlet></router-outlet>
 </div>
 
-<app-floating-nav [activeTab]="currentTab" (tabChange)="onTabChange($event)"></app-floating-nav>
+<app-floating-nav [activeTab]="currentTab" (tabChange)="onTabChange($event)" class="relative z-10"></app-floating-nav>

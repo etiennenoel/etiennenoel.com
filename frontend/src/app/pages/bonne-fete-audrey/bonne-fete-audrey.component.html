@@ -1,0 +1,90 @@
+<div class="min-h-screen font-sans selection:bg-[#1d1d1f] selection:text-white page-container">
+  
+  <!-- --- NAV / HEADER --- -->
+  <nav class="fixed top-0 w-full z-50 glass-panel py-4 px-6 md:px-12 flex justify-between items-center transition-opacity duration-700"
+       [style.opacity]="isLoaded ? 1 : 0">
+    <span class="font-semibold text-xs tracking-widest uppercase text-[#1d1d1f]">Audrey.</span>
+    <span class="text-xs text-[#86868b] font-medium">Édition Anniversaire</span>
+  </nav>
+
+  <!-- --- HERO SECTION --- -->
+  <section class="relative pt-40 pb-20 px-6 md:px-12 min-h-screen flex flex-col items-center">
+    <div class="text-center max-w-4xl mx-auto mt-12 md:mt-24 z-10">
+      <h1 class="text-6xl md:text-8xl lg:text-[120px] font-bold sf-display leading-tight tracking-tighter mb-6 reveal-up"
+          [class.active]="isLoaded" style="transition-delay: 0.1s">
+        Audrey Vervoite.
+      </h1>
+      <h2 class="text-2xl md:text-4xl font-medium text-[#86868b] sf-display reveal-up"
+          [class.active]="isLoaded" style="transition-delay: 0.3s">
+        L'élégance à l'état pur.<br/>Joyeux anniversaire.
+      </h2>
+    </div>
+
+    <!-- Hero Image -->
+    <div class="w-full max-w-7xl mx-auto mt-20 rounded-[2.5rem] overflow-hidden shadow-[0_20px_60px_-15px_rgba(0,0,0,0.05)] reveal-up hero-image-container"
+         [class.active]="isLoaded" style="transition-delay: 0.5s; height: 60vh;">
+      <div 
+        class="w-full h-full bg-cover bg-center"
+        [style.background-image]="'url(https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2564&auto=format&fit=crop)'"
+        [style.transform]="'scale(' + (1 + scrollY * 0.0005) + ')'"
+        style="transform-origin: center center;">
+      </div>
+    </div>
+  </section>
+
+  <!-- --- SECTION 1: THE DESIGNER --- -->
+  <section class="py-32 px-6 md:px-12 bg-white">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24 items-center">
+      <div class="order-2 md:order-1 relative rounded-[2.5rem] overflow-hidden h-[500px] md:h-[700px] shadow-[0_20px_40px_-15px_rgba(0,0,0,0.05)] group">
+        <div 
+          class="absolute inset-0 bg-cover bg-center transition-transform duration-1000 ease-out group-hover:scale-105 h-full w-full"
+          [style.background-image]="'url(https://images.unsplash.com/photo-1494438639946-1ebd1d20bf85?q=80&w=2000&auto=format&fit=crop)'"
+          [style.transform]="'translateY(' + (scrollY * 0.05 - 50) + 'px) scale(1.1)'">
+        </div>
+      </div>
+      <div class="order-1 md:order-2">
+        <h3 class="text-4xl md:text-6xl font-bold sf-display tracking-tight mb-8 text-[#1d1d1f]">
+          L'art de<br/>l'essentiel.
+        </h3>
+        <p class="text-xl md:text-2xl text-[#86868b] font-normal leading-relaxed sf-text">
+          En tant que designer graphique, tu possèdes ce don rare de transformer le complexe en une évidence visuelle. Ton œil pour la typographie, les espaces vides et l'équilibre parfait rend le monde infiniment plus beau.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- --- SECTION 2: THE VISION --- -->
+  <section class="py-32 px-6 md:px-12" style="background-color: #fbfbfd">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-16 md:mb-24">
+        <h3 class="text-4xl md:text-6xl font-bold sf-display tracking-tight mb-6 text-[#1d1d1f]">À ta vision unique.</h3>
+        <p class="text-xl text-[#86868b] max-w-2xl mx-auto sf-text">
+          Que cette nouvelle année t'apporte des projets qui t'inspirent profondément et des moments de grâce au quotidien.
+        </p>
+      </div>
+
+      <!-- Large Showcase Image -->
+      <div class="relative rounded-[2.5rem] overflow-hidden h-[60vh] md:h-[80vh] shadow-[0_30px_60px_-15px_rgba(0,0,0,0.1)]">
+        <div 
+          class="absolute inset-0 bg-cover bg-center"
+          style="background-image: url('https://images.unsplash.com/photo-1600607686527-6fb886090705?q=80&w=2000&auto=format&fit=crop');">
+        </div>
+        <!-- Glassmorphism Card Overlay -->
+        <div class="absolute bottom-8 left-8 right-8 md:bottom-12 md:left-12 md:right-auto md:w-96 glass-panel rounded-3xl p-8 shadow-2xl">
+          <h4 class="text-2xl font-bold mb-3 text-[#1d1d1f]">Passe une journée exceptionnelle.</h4>
+          <p class="text-[#86868b] sf-text leading-relaxed">
+            Aujourd'hui, on célèbre non seulement ton anniversaire, mais l'impact créatif que tu as sur ceux qui t'entourent.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- --- FOOTER --- -->
+  <footer class="py-12 px-6 text-center bg-white border-t border-[#d2d2d7]">
+    <p class="text-sm text-[#86868b] sf-text font-medium m-0">
+      Conçu exclusivement pour Audrey. &copy; {{ currentYear }}
+    </p>
+  </footer>
+  
+</div>

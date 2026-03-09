@@ -22,9 +22,10 @@ import {NeoImageComponent} from './components/content/neo-image/neo-image.compon
 import {ArticlePageComponent}from './pages/articles/article-page/article-page.component';
 import {ModalComponent}from './components/modal/modal.component';
 import {ProjectsComponent} from './pages/projects/projects.component';
-import { ThemeToggleComponent } from './components/theme-toggle/theme-toggle.component';
+import {ThemeToggleComponent} from './components/theme-toggle/theme-toggle.component';
 import {NeoCodeComponent} from './components/content/neo-code/neo-code.component';
 import {ArticlesComponent} from './pages/articles/articles.component';
+import {BonneFeteAudreyComponent} from './pages/bonne-fete-audrey/bonne-fete-audrey.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import {ArticlesComponent} from './pages/articles/articles.component';
     ArticlesComponent,
     ProjectsComponent,
     ThemeToggleComponent,
+    BonneFeteAudreyComponent,
 
 
     // Pages
